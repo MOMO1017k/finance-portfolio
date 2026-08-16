@@ -33,7 +33,9 @@ test("server-renders the portfolio framework", async () => {
   assert.match(html, /把财务问题，转化为可行动的数据答案/);
   assert.match(html, /Aelita/);
   assert.match(html, /OPEN TO WORK/);
-  assert.match(html, /长期预测、预算管理/);
+  assert.match(html, /经营&amp;财务分析、长期预测、预算管理/);
+  assert.match(html, /经营分析 · FP&amp;A · AI Commercial Finance/);
+  assert.match(html, /18651708315/);
   assert.match(html, /125 万\+/);
   assert.match(html, /财务判断，加上数据能力/);
   assert.match(html, /下一阶段接入/);
@@ -53,6 +55,8 @@ test("ships portfolio assets and site metadata", async () => {
   assert.match(page, /01 \/ SELECTED WORK/);
   assert.match(page, /href="\/resume\.html"/);
   assert.match(page, /href="\/resume-en\.html"/);
+  assert.match(page, /className="text-cta" href="#contact"/);
+  assert.match(page, /href="tel:18651708315"/);
   assert.doesNotMatch(page, /className="wordmark"|className="monogram"/);
   assert.match(layout, /const title = "李子默｜Finance Analytics Portfolio"/);
   assert.match(layout, /openGraph:/);
@@ -62,6 +66,9 @@ test("ships portfolio assets and site metadata", async () => {
   assert.match(css, /max-width: 1220px/);
   assert.match(css, /letter-spacing: 2mm/);
   assert.match(css, /Microsoft YaHei/);
+  assert.match(css, /\.overline \{[^}]*font-size: 13px/);
+  assert.match(css, /\.site-header \{[^}]*height: 82px/);
+  assert.match(css, /\.footer-main > \.overline \{ color: var\(--white\)/);
   assert.doesNotMatch(css, /#dfff00|#ff5b35/i);
 
   await Promise.all([

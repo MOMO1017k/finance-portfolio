@@ -33,16 +33,16 @@ export default function Home() {
       <section className="portfolio-hero shell" aria-labelledby="hero-title">
         <div className="hero-status">
           <span className="status"><i /> OPEN TO WORK</span>
-          <p><small>TARGET ROLES</small> Finance Analytics · AI Commercial Finance · 经营分析</p>
+          <p><small>TARGET ROLES</small> 经营分析 · FP&amp;A · AI Commercial Finance</p>
         </div>
         <div className="hero-main">
           <p className="overline">FINANCE ANALYTICS · SHANGHAI</p>
           <h1 id="hero-title"><span className="name-cn">李子默</span><span className="name-en">Aelita</span></h1>
           <p className="hero-statement">把财务问题，转化为可行动的数据答案。</p>
-          <p className="hero-summary">7 年财务与分析经验，横跨经营分析、长期预测、预算管理、数据治理与自动化。我关注的不只是“发生了什么”，更是为什么发生、接下来该做什么。</p>
+          <p className="hero-summary">7 年财务与分析经验，横跨经营&amp;财务分析、长期预测、预算管理、数据治理与自动化。我关注的不只是“发生了什么”，更是为什么发生、接下来该做什么。</p>
           <div className="hero-cta">
             <a className="primary-cta" href="#work">查看作品 <span aria-hidden="true">↓</span></a>
-            <a className="text-cta" href="mailto:15221824019@163.com">和我聊聊 <span aria-hidden="true">↗</span></a>
+            <a className="text-cta" href="#contact">和我聊聊 <span aria-hidden="true">↓</span></a>
           </div>
         </div>
 
@@ -122,9 +122,10 @@ export default function Home() {
         <div className="shell footer-main">
           <p className="overline">04 / LET&apos;S CONNECT</p>
           <h2>一起把复杂数据，<br /><span>变成清晰决策。</span></h2>
-          <p className="footer-note">正在寻找 Finance Analytics、AI Commercial Finance 与经营分析机会。</p>
+          <p className="footer-note">正在寻找经营分析、FP&amp;A 与 AI Commercial Finance 机会。</p>
           <div className="contact-row">
             <a href="mailto:15221824019@163.com">15221824019@163.com <span>↗</span></a>
+            <a href="tel:18651708315">18651708315 <span>↗</span></a>
             <a href="/resume.html" target="_blank">中文简历 <span>↗</span></a>
             <a href="/resume-en.html" target="_blank">English Resume <span>↗</span></a>
           </div>
