@@ -39,25 +39,19 @@ export default function Home() {
           <p className="overline">FINANCE ANALYTICS · SHANGHAI</p>
           <h1 id="hero-title"><span className="name-cn">李子默</span><span className="name-en">Aelita</span></h1>
           <p className="hero-statement">把财务问题，转化为可行动的数据答案。</p>
-          <p className="hero-summary">7 年财务与分析经验，横跨经营&amp;财务分析、长期预测、预算管理、数据治理与自动化。我关注的不只是“发生了什么”，更是为什么发生、接下来该做什么。</p>
+          <p className="hero-summary"><span>7 年财务与分析经验，横跨经营&amp;财务分析、长期预测、预算管理、数据治理与自动化。</span><br /><span>我关注的不只是“发生了什么”，更是为什么发生、接下来该做什么。</span></p>
           <div className="hero-cta">
             <a className="primary-cta" href="#work">查看作品 <span aria-hidden="true">↓</span></a>
             <a className="text-cta" href="#contact">和我聊聊 <span aria-hidden="true">↓</span></a>
           </div>
         </div>
 
-        <dl className="profile-metrics">
-          <div><dt>7 年</dt><dd>财务与分析经验</dd></div><div><dt>同济</dt><dd>应用统计硕士</dd></div>
-          <div><dt>CPA · ACCA</dt><dd>专业资质</dd></div><div><dt>CFA I</dt><dd>通过一级考试</dd></div>
-        </dl>
       </section>
-
-      <div className="marquee" aria-hidden="true"><div><span>PLAN</span><i>✦</i><span>ANALYZE</span><i>✦</i><span>EXPLAIN</span><i>✦</i><span>DECIDE</span><i>✦</i><span>PLAN</span><i>✦</i><span>ANALYZE</span><i>✦</i><span>EXPLAIN</span><i>✦</i><span>DECIDE</span></div></div>
 
       <section className="work-section shell section-space" id="work">
         <div className="section-intro">
-          <p className="overline">01 / SELECTED WORK</p>
-          <div><h2>可以被检查的工作。</h2><p>用案例展示我如何拆解问题、建立方法，并把分析转化为可复核的结论。</p></div>
+          <p className="overline">01 / PROJECT</p>
+          <div><h2>项目</h2><p>展示我如何拆解真实问题、建立分析方法，并将结果转化为可复核的业务结论。</p></div>
         </div>
         <article className="project-card">
           <div className="project-visual">
@@ -81,8 +75,8 @@ export default function Home() {
       <section className="capability-section" id="capabilities">
         <div className="shell section-space">
           <div className="section-intro inverse">
-            <p className="overline">02 / HOW I HELP</p>
-            <div><h2>财务判断，加上数据能力。</h2><p>不为了技术而技术。每一种工具，都应该让规划更快、报告更清楚、决策更容易执行。</p></div>
+            <p className="overline">02 / CAPABILITIES</p>
+            <div><h2>能力</h2><p>结合财务判断、数据分析与自动化，让规划更快、报告更清楚、决策更容易执行。</p></div>
           </div>
           <div className="capability-grid">
             {strengths.map((item) => (
@@ -100,7 +94,7 @@ export default function Home() {
       <section className="experience-section shell section-space" id="experience">
         <div className="section-intro">
           <p className="overline">03 / EXPERIENCE</p>
-          <div><h2>从财务基础，到经营决策。</h2><p>选取与当前求职方向最相关的经历；完整信息可在简历中查看。</p></div>
+          <div><h2>经历</h2><p>选取与当前求职方向最相关的经历；完整信息可在中英文简历中查看。</p></div>
         </div>
         <div className="experience-list">
           {experience.map((item, index) => (
@@ -111,16 +105,17 @@ export default function Home() {
           ))}
         </div>
         <div className="credential-board">
-          <div className="credential-lead"><p className="overline">CREDENTIALS &amp; EDUCATION</p><h3>财务专业训练<br />× 统计方法</h3></div>
+          <div className="credential-lead"><p className="overline">PROFILE</p><h3>7 年<br />财务与分析经验</h3></div>
           <div><small>EDUCATION</small><strong>同济大学</strong><span>应用统计硕士 · 2026</span></div>
-          <div><small>CREDENTIALS</small><strong>CPA · ACCA</strong><span>CFA Level I · 中级会计师</span></div>
+          <div><small>CREDENTIALS</small><strong>CPA · ACCA</strong><span>专业资质 · 中级会计师</span></div>
+          <div><small>CREDENTIALS</small><strong>CFA I</strong><span>通过一级考试</span></div>
           <div><small>TOOLS</small><strong>Power BI · Python</strong><span>SQL · Excel · Data Modeling</span></div>
         </div>
       </section>
 
       <footer id="contact">
         <div className="shell footer-main">
-          <p className="overline">04 / LET&apos;S CONNECT</p>
+          <p className="overline">04 / CONTACT</p>
           <h2>一起把复杂数据，<br /><span>变成清晰决策。</span></h2>
           <p className="footer-note">正在寻找经营分析、FP&amp;A 与 AI Commercial Finance 机会。</p>
           <div className="contact-row">

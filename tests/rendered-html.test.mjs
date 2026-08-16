@@ -37,7 +37,9 @@ test("server-renders the portfolio framework", async () => {
   assert.match(html, /经营分析 · FP&amp;A · AI Commercial Finance/);
   assert.match(html, /18651708315/);
   assert.match(html, /125 万\+/);
-  assert.match(html, /财务判断，加上数据能力/);
+  assert.match(html, />能力</);
+  assert.match(html, />项目</);
+  assert.match(html, />经历</);
   assert.match(html, /下一阶段接入/);
   assert.match(html, /15221824019@163\.com/);
   assert.doesNotMatch(html, /codex-preview|SkeletonPreview|react-loading-skeleton/);
@@ -52,12 +54,15 @@ test("ships portfolio assets and site metadata", async () => {
   ]);
 
   assert.match(page, /FINANCE ANALYTICS · SHANGHAI/);
-  assert.match(page, /01 \/ SELECTED WORK/);
+  assert.match(page, /01 \/ PROJECT/);
+  assert.match(page, /02 \/ CAPABILITIES/);
+  assert.match(page, /04 \/ CONTACT/);
   assert.match(page, /href="\/resume\.html"/);
   assert.match(page, /href="\/resume-en\.html"/);
   assert.match(page, /className="text-cta" href="#contact"/);
   assert.match(page, /href="tel:18651708315"/);
   assert.doesNotMatch(page, /className="wordmark"|className="monogram"/);
+  assert.doesNotMatch(page, /profile-metrics|className="marquee"/);
   assert.match(layout, /const title = "李子默｜Finance Analytics Portfolio"/);
   assert.match(layout, /openGraph:/);
   assert.match(layout, /<html lang="zh-CN">/);
@@ -69,7 +74,9 @@ test("ships portfolio assets and site metadata", async () => {
   assert.match(css, /\.overline \{[^}]*font-size: 13px/);
   assert.match(css, /\.site-header \{[^}]*height: 82px/);
   assert.match(css, /\.hero-status \{[^}]*margin-bottom: clamp\(28px, 3vw, 44px\)/);
-  assert.match(css, /\.profile-metrics \{[^}]*margin: clamp\(42px, 4vw, 64px\)/);
+  assert.match(css, /scroll-snap-type: y proximity/);
+  assert.match(css, /min-height: 100svh/);
+  assert.doesNotMatch(css, /\.profile-metrics|\.marquee/);
   assert.match(css, /\.footer-main > \.overline \{ color: var\(--white\)/);
   assert.doesNotMatch(css, /#dfff00|#ff5b35/i);
 
