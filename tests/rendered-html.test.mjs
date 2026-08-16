@@ -31,6 +31,9 @@ test("server-renders the portfolio framework", async () => {
   const html = await response.text();
   assert.match(html, /<title>李子默｜Finance Analytics Portfolio<\/title>/);
   assert.match(html, /把财务问题，转化为可行动的数据答案/);
+  assert.match(html, /Aelita/);
+  assert.match(html, /OPEN TO WORK/);
+  assert.match(html, /长期预测、预算管理/);
   assert.match(html, /125 万\+/);
   assert.match(html, /财务判断，加上数据能力/);
   assert.match(html, /下一阶段接入/);
@@ -49,14 +52,21 @@ test("ships portfolio assets and site metadata", async () => {
   assert.match(page, /FINANCE ANALYTICS · SHANGHAI/);
   assert.match(page, /01 \/ SELECTED WORK/);
   assert.match(page, /href="\/resume\.html"/);
+  assert.match(page, /href="\/resume-en\.html"/);
+  assert.doesNotMatch(page, /className="wordmark"|className="monogram"/);
   assert.match(layout, /const title = "李子默｜Finance Analytics Portfolio"/);
   assert.match(layout, /openGraph:/);
   assert.match(layout, /<html lang="zh-CN">/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
   assert.match(css, /prefers-reduced-motion/);
+  assert.match(css, /max-width: 1220px/);
+  assert.match(css, /letter-spacing: 2mm/);
+  assert.match(css, /Microsoft YaHei/);
+  assert.doesNotMatch(css, /#dfff00|#ff5b35/i);
 
   await Promise.all([
     access(new URL("../public/resume.html", import.meta.url)),
+    access(new URL("../public/resume-en.html", import.meta.url)),
     access(new URL("../public/feature-system.png", import.meta.url)),
     access(new URL("../public/detection-framework.png", import.meta.url)),
     access(new URL("../public/results-overview.png", import.meta.url)),

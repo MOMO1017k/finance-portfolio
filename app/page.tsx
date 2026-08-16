@@ -21,30 +21,30 @@ export default function Home() {
   return (
     <main id="top">
       <header className="site-header">
-        <a className="wordmark" href="#top" aria-label="返回首页顶部">LZM<span>®</span></a>
         <nav className="main-nav" aria-label="主导航">
           <a href="#work">项目</a><a href="#capabilities">能力</a><a href="#experience">经历</a><a href="#contact">联系</a>
         </nav>
-        <a className="resume-link" href="/resume.html" target="_blank">RESUME <span aria-hidden="true">↗</span></a>
+        <div className="resume-menu" aria-label="简历下载">
+          <a className="resume-link" href="/resume.html" target="_blank">中文简历 <span aria-hidden="true">↗</span></a>
+          <a className="resume-link" href="/resume-en.html" target="_blank">EN RESUME <span aria-hidden="true">↗</span></a>
+        </div>
       </header>
 
       <section className="portfolio-hero shell" aria-labelledby="hero-title">
+        <div className="hero-status">
+          <span className="status"><i /> OPEN TO WORK</span>
+          <p><small>TARGET ROLES</small> Finance Analytics · AI Commercial Finance · 经营分析</p>
+        </div>
         <div className="hero-main">
           <p className="overline">FINANCE ANALYTICS · SHANGHAI</p>
-          <h1 id="hero-title">李子默<span>把财务问题，转化为可行动的数据答案。</span></h1>
-          <p className="hero-summary">7 年财务与分析经验，横跨经营分析、预算预测、数据治理与自动化。我关注的不只是“发生了什么”，更是为什么发生、接下来该做什么。</p>
+          <h1 id="hero-title"><span className="name-cn">李子默</span><span className="name-en">Aelita</span></h1>
+          <p className="hero-statement">把财务问题，转化为可行动的数据答案。</p>
+          <p className="hero-summary">7 年财务与分析经验，横跨经营分析、长期预测、预算管理、数据治理与自动化。我关注的不只是“发生了什么”，更是为什么发生、接下来该做什么。</p>
           <div className="hero-cta">
             <a className="primary-cta" href="#work">查看作品 <span aria-hidden="true">↓</span></a>
             <a className="text-cta" href="mailto:15221824019@163.com">和我聊聊 <span aria-hidden="true">↗</span></a>
           </div>
         </div>
-
-        <aside className="hero-panel" aria-label="求职状态与个人关键词">
-          <div className="panel-head"><span>PROFILE / 2026</span><span className="status"><i /> OPEN TO WORK</span></div>
-          <div className="monogram" aria-hidden="true"><span>L</span><span>Z</span><span>M</span></div>
-          <div className="panel-role"><small>FOCUS</small><p>Finance Analytics<br />商业财务 · 经营分析</p></div>
-          <div className="panel-foot"><span>FP&amp;A</span><span>DATA</span><span>AUTOMATION</span></div>
-        </aside>
 
         <dl className="profile-metrics">
           <div><dt>7 年</dt><dd>财务与分析经验</dd></div><div><dt>同济</dt><dd>应用统计硕士</dd></div>
@@ -125,7 +125,8 @@ export default function Home() {
           <p className="footer-note">正在寻找 Finance Analytics、AI Commercial Finance 与经营分析机会。</p>
           <div className="contact-row">
             <a href="mailto:15221824019@163.com">15221824019@163.com <span>↗</span></a>
-            <a href="/resume.html" target="_blank">查看完整简历 <span>↗</span></a>
+            <a href="/resume.html" target="_blank">中文简历 <span>↗</span></a>
+            <a href="/resume-en.html" target="_blank">English Resume <span>↗</span></a>
           </div>
           <div className="footer-bottom"><span>李子默 · 上海</span><span>FINANCE ANALYTICS PORTFOLIO · 2026</span><a href="#top">BACK TO TOP ↑</a></div>
         </div>
