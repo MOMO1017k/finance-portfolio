@@ -23,16 +23,17 @@ async function render() {
   );
 }
 
-test("server-renders the completed portfolio", async () => {
+test("server-renders the portfolio framework", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>李子默｜多模态舆情预警案例<\/title>/);
-  assert.match(html, /在舆情成为危机之前/);
-  assert.match(html, /125万\+/);
-  assert.match(html, /6 \/ 10 已知危机被检出/);
+  assert.match(html, /<title>李子默｜Finance Analytics Portfolio<\/title>/);
+  assert.match(html, /把财务问题，转化为可行动的数据答案/);
+  assert.match(html, /125 万\+/);
+  assert.match(html, /财务判断，加上数据能力/);
+  assert.match(html, /下一阶段接入/);
   assert.match(html, /15221824019@163\.com/);
   assert.doesNotMatch(html, /codex-preview|SkeletonPreview|react-loading-skeleton/);
 });
@@ -45,9 +46,11 @@ test("ships portfolio assets and site metadata", async () => {
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
   ]);
 
-  assert.match(page, /FINANCE ANALYTICS · CASE STUDY 01/);
+  assert.match(page, /FINANCE ANALYTICS · SHANGHAI/);
+  assert.match(page, /01 \/ SELECTED WORK/);
   assert.match(page, /href="\/resume\.html"/);
-  assert.match(layout, /title: "李子默｜Finance Analytics Portfolio"/);
+  assert.match(layout, /const title = "李子默｜Finance Analytics Portfolio"/);
+  assert.match(layout, /openGraph:/);
   assert.match(layout, /<html lang="zh-CN">/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
   assert.match(css, /prefers-reduced-motion/);
@@ -57,5 +60,6 @@ test("ships portfolio assets and site metadata", async () => {
     access(new URL("../public/feature-system.png", import.meta.url)),
     access(new URL("../public/detection-framework.png", import.meta.url)),
     access(new URL("../public/results-overview.png", import.meta.url)),
+    access(new URL("../public/og.png", import.meta.url)),
   ]);
 });
