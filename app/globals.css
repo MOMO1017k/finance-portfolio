@@ -32,7 +32,7 @@ img { display: block; max-width: 100%; }
 .resume-link span { color: var(--orange); margin-left: 8px; }
 
 .portfolio-hero { display: block; min-height: auto; padding-bottom: 64px; padding-top: 42px; }
-.hero-status { align-items: center; background: var(--ink); color: white; display: flex; justify-content: space-between; margin-bottom: clamp(68px, 8vw, 108px); padding: 22px 26px; }
+.hero-status { align-items: center; background: var(--ink); color: white; display: flex; justify-content: space-between; margin-bottom: clamp(28px, 3vw, 44px); padding: 22px 26px; }
 .hero-status .status { color: #f8f6f2; font-size: 13px; font-weight: 700; letter-spacing: .08em; white-space: nowrap; }
 .hero-status .status i { background: #f8f6f2; }
 .hero-status p { color: #f8f6f2; font-size: 13px; letter-spacing: .08em; margin: 0; text-align: right; }
@@ -53,7 +53,7 @@ img { display: block; max-width: 100%; }
 .status { color: var(--acid); }
 .status i { animation: pulse 2s ease-in-out infinite; background: var(--acid); border-radius: 50%; display: inline-block; height: 6px; margin-right: 7px; width: 6px; }
 
-.profile-metrics { border-bottom: 1px solid var(--line); border-top: 1px solid var(--line); display: grid; grid-column: 1 / -1; grid-template-columns: repeat(4, 1fr); margin: clamp(80px, 9vw, 132px) 0 0; }
+.profile-metrics { border-bottom: 1px solid var(--line); border-top: 1px solid var(--line); display: grid; grid-column: 1 / -1; grid-template-columns: repeat(4, 1fr); margin: clamp(42px, 4vw, 64px) 0 0; }
 .profile-metrics div { border-right: 1px solid var(--line); padding: 22px; }
 .profile-metrics div:first-child { padding-left: 0; }
 .profile-metrics div:last-child { border-right: 0; }
@@ -134,7 +134,7 @@ footer h2 span { color: var(--white); }
 .footer-bottom { border-top: 1px solid rgba(255,255,255,.4); display: flex; font-family: var(--font-geist-mono); font-size: 9px; justify-content: space-between; letter-spacing: .08em; margin-top: 110px; padding-top: 24px; }
 
 @media (max-width: 1100px) {
-  .profile-metrics { margin-top: 82px; }
+  .profile-metrics { margin-top: 56px; }
   .project-card { grid-template-columns: 1fr; }
   .project-visual { min-height: 500px; }
   .project-copy { min-height: 620px; }
@@ -151,7 +151,7 @@ footer h2 span { color: var(--white); }
   .resume-link { font-size: 11px; }
   .resume-link span { margin-left: 3px; }
   .portfolio-hero { padding-top: 24px; }
-  .hero-status { align-items: flex-start; flex-direction: column; gap: 12px; margin-bottom: 64px; }
+  .hero-status { align-items: flex-start; flex-direction: column; gap: 12px; margin-bottom: 36px; }
   .hero-status p { line-height: 1.7; text-align: left; }
   .hero-main h1 { align-items: flex-start; flex-direction: column; gap: 16px; margin-top: 34px; }
   .hero-main h1 .name-cn, .hero-main h1 .name-en { font-size: clamp(36px, 11vw, 52px); }

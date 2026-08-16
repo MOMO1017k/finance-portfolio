@@ -68,6 +68,8 @@ test("ships portfolio assets and site metadata", async () => {
   assert.match(css, /Microsoft YaHei/);
   assert.match(css, /\.overline \{[^}]*font-size: 13px/);
   assert.match(css, /\.site-header \{[^}]*height: 82px/);
+  assert.match(css, /\.hero-status \{[^}]*margin-bottom: clamp\(28px, 3vw, 44px\)/);
+  assert.match(css, /\.profile-metrics \{[^}]*margin: clamp\(42px, 4vw, 64px\)/);
   assert.match(css, /\.footer-main > \.overline \{ color: var\(--white\)/);
   assert.doesNotMatch(css, /#dfff00|#ff5b35/i);
 
