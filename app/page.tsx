@@ -8,13 +8,13 @@ export const metadata: Metadata = {
 const strengths = [
   { number: "01", title: "Planning & Performance", cn: "规划与经营分析", body: "预算、滚动预测、差异分析和管理报告，把数字变化连接到清晰的经营动作。", tags: ["Budget", "Forecast", "Variance"] },
   { number: "02", title: "Data & Decision", cn: "数据与决策支持", body: "从口径治理到可视化看板，把分散数据整理为可追踪、可复核的业务信号。", tags: ["Power BI", "SQL", "Python"] },
-  { number: "03", title: "Finance Transformation", cn: "财务流程优化", body: "用自动化与统计方法缩短重复工作，让团队把时间留给判断、沟通与决策。", tags: ["Automation", "Control", "AI Workflow"] },
+  { number: "03", title: "Finance Transformation", cn: "财务数字化转型", body: "结合财务判断、Power BI 与 Python，推进数据治理、预测监控和报表自动化，让分析流程更快、更可复核，并为可控 AI 工作流预留应用空间。", tags: ["Automation", "Data Governance", "AI Workflow"] },
 ];
 
 const experience = [
-  { period: "2024 — 2026", role: "海外业务 FP&A / 经营分析", body: "负责预算、滚动预测、成本分摊与经营监控，推动 Power BI 报告与成本透明化。", mark: "NOW" },
-  { period: "2021 — 2024", role: "财务分析 · 中国民生投资", body: "开展历史数据治理、分析自动化与管理报告体系化，支持复杂经营问题的澄清与决策。", mark: "03 YRS" },
-  { period: "2019 — 2021", role: "财务数据与系统支持", body: "从财务基础工作进入数据与系统场景，建立对流程、口径和数据质量的完整理解。", mark: "FOUNDATION" },
+  { period: "2024 — 2026", role: "海外业务 FP&A / 经营分析", body: "负责预算、滚动预测、成本分摊与经营监控，推动 Power BI 报告与成本透明化；从 0 到 1 搭建成本分析模型和参数化预测，部分国家及整体预测差异控制在 5% 以内。", mark: "LATEST" },
+  { period: "2021 — 2024", role: "财务分析 · 中国民生投资", body: "开展历史数据治理、分析自动化与管理报告体系化，支持复杂经营问题的澄清与决策；通过历史台账与账务数据梳理，推动约 1.8 亿元历史负债厘清及会计处理调整。", mark: "03 YRS" },
+  { period: "2019 — 2021", role: "财务数据与系统支持", body: "从财务基础工作进入数据与系统场景，建立对流程、口径和数据质量的完整理解；搭建资金、收入与对账标准化模板，并推进微信商城自助开票上线。", mark: "FOUNDATION" },
 ];
 
 export default function Home() {
@@ -55,7 +55,7 @@ export default function Home() {
         </div>
         <article className="project-card">
           <div className="project-visual">
-            <img src="/results-overview.png" alt="多模态舆情风险预警项目的结果概览" />
+            <img src="/results-overview.png" alt="《无限暖暖》多模态舆情突变预警系统的结果概览" />
             <div className="visual-label"><span>CASE 01</span><span>MASTER&apos;S PROJECT</span></div>
             <div className="visual-signal" aria-hidden="true">
               {[28, 36, 31, 51, 44, 72, 54, 86, 62, 46, 39, 57].map((height, index) => <i key={index} style={{ height: `${height}%` }} />)}
@@ -64,8 +64,8 @@ export default function Home() {
           <div className="project-copy">
             <div className="project-meta"><span>DATA &amp; ANALYTICS</span><span>2026</span></div>
             <p className="project-index">01</p>
-            <h3>多模态舆情风险<br />预警框架</h3>
-            <p>从 125 万+文本与 104 万+图片中提取 19 维时序信号，探索如何更早识别、解释并复核运营风险。</p>
+            <h3>《无限暖暖》多模态舆情<br />突变预警系统</h3>
+            <p>处理约 125 万条文本和 104 万张图片，构建 19 维监控指标体系，结合时序分解、TFT、主题建模与图像聚类识别并解释异常变化。</p>
             <div className="project-tags"><span>TIME SERIES</span><span>PYTHON</span><span>NLP</span><span>BUSINESS MONITORING</span></div>
             <div className="coming-link" aria-label="项目详情将在下一阶段接入">查看项目详情 <span>下一阶段接入 →</span></div>
           </div>
@@ -106,9 +106,9 @@ export default function Home() {
         </div>
         <div className="credential-board">
           <div className="credential-lead"><p className="overline">PROFILE</p><h3>7 年<br />财务与分析经验</h3></div>
-          <div><small>EDUCATION</small><strong>同济大学</strong><span>应用统计硕士 · 2026</span></div>
-          <div><small>CREDENTIALS</small><strong>CPA · ACCA</strong><span>专业资质 · 中级会计师</span></div>
-          <div><small>CREDENTIALS</small><strong>CFA I</strong><span>通过一级考试</span></div>
+          <div><small>EDUCATION</small><strong>同济大学</strong><span>应用统计硕士</span></div>
+          <div><small>CREDENTIALS</small><strong>CPA · ACCA</strong><span>税务师· 中级会计</span></div>
+          <div><small>CREDENTIALS</small><strong>CFA通过一级考试</strong></div>
           <div><small>TOOLS</small><strong>Power BI · Python</strong><span>SQL · Excel · Data Modeling</span></div>
         </div>
       </section>

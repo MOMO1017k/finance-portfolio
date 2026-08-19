@@ -36,7 +36,11 @@ test("server-renders the portfolio framework", async () => {
   assert.match(html, /经营&amp;财务分析、长期预测、预算管理/);
   assert.match(html, /经营分析 · FP&amp;A · AI Commercial Finance/);
   assert.match(html, /18651708315/);
-  assert.match(html, /125 万\+/);
+  assert.match(html, /125 万条文本和 104 万张图片/);
+  assert.match(html, /19 维监控指标体系/);
+  assert.match(html, /约 1\.8 亿元历史负债/);
+  assert.match(html, /LATEST/);
+  assert.match(html, /CFA通过一级考试/);
   assert.match(html, />能力</);
   assert.match(html, />项目</);
   assert.match(html, />经历</);
