@@ -57,8 +57,8 @@ test("ships portfolio assets and site metadata", async () => {
   assert.match(page, /01 \/ PROJECT/);
   assert.match(page, /02 \/ CAPABILITIES/);
   assert.match(page, /04 \/ CONTACT/);
-  assert.match(page, /href="\/resume\.html"/);
-  assert.match(page, /href="\/resume-en\.html"/);
+  assert.match(page, /href="\/resume\.pdf"/);
+  assert.match(page, /href="\/resume-en\.pdf"/);
   assert.match(page, /className="text-cta" href="#contact"/);
   assert.match(page, /href="tel:18651708315"/);
   assert.doesNotMatch(page, /className="wordmark"|className="monogram"/);
@@ -81,8 +81,8 @@ test("ships portfolio assets and site metadata", async () => {
   assert.doesNotMatch(css, /#dfff00|#ff5b35/i);
 
   await Promise.all([
-    access(new URL("../public/resume.html", import.meta.url)),
-    access(new URL("../public/resume-en.html", import.meta.url)),
+    access(new URL("../public/resume.pdf", import.meta.url)),
+    access(new URL("../public/resume-en.pdf", import.meta.url)),
     access(new URL("../public/feature-system.png", import.meta.url)),
     access(new URL("../public/detection-framework.png", import.meta.url)),
     access(new URL("../public/results-overview.png", import.meta.url)),

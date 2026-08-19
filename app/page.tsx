@@ -25,8 +25,8 @@ export default function Home() {
           <a href="#work">项目</a><a href="#capabilities">能力</a><a href="#experience">经历</a><a href="#contact">联系</a>
         </nav>
         <div className="resume-menu" aria-label="简历下载">
-          <a className="resume-link" href="/resume.html" target="_blank">中文简历 <span aria-hidden="true">↗</span></a>
-          <a className="resume-link" href="/resume-en.html" target="_blank">EN RESUME <span aria-hidden="true">↗</span></a>
+          <a className="resume-link" href="/resume.pdf" target="_blank">中文简历 <span aria-hidden="true">↗</span></a>
+          <a className="resume-link" href="/resume-en.pdf" target="_blank">EN RESUME <span aria-hidden="true">↗</span></a>
         </div>
       </header>
 
@@ -121,8 +121,8 @@ export default function Home() {
           <div className="contact-row">
             <a href="mailto:15221824019@163.com">15221824019@163.com <span>↗</span></a>
             <a href="tel:18651708315">18651708315 <span>↗</span></a>
-            <a href="/resume.html" target="_blank">中文简历 <span>↗</span></a>
-            <a href="/resume-en.html" target="_blank">English Resume <span>↗</span></a>
+            <a href="/resume.pdf" target="_blank">中文简历 <span>↗</span></a>
+            <a href="/resume-en.pdf" target="_blank">English Resume <span>↗</span></a>
           </div>
           <div className="footer-bottom"><span>李子默 · 上海</span><span>FINANCE ANALYTICS PORTFOLIO · 2026</span><a href="#top">BACK TO TOP ↑</a></div>
         </div>
