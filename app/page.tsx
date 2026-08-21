@@ -46,11 +46,11 @@ export default function Home() {
           </div>
         </div>
         <dl className="credential-board hero-credentials">
-          <div><dt>7 年</dt><dd>财务与分析经验</dd></div>
-          <div><dt>同济</dt><dd>应用统计硕士</dd></div>
-          <div><dt>CPA · ACCA</dt><dd>CFA Level I 通过 · 税务师 · 中级会计师 · CET-6 · 中级口译</dd></div>
+          <div><dt>7 年</dt><dd className="credential-primary">财务与分析经验</dd></div>
+          <div><dt>同济大学</dt><dd>应用统计硕士</dd></div>
+          <div><dt>CPA · ACCA</dt><dd className="credential-lines"><span>税务师 · 中级会计师</span><span>CFA Level I 通过</span></dd></div>
           <div><dt>Power BI · Python</dt><dd>Excel · SQL</dd></div>
-          <div className="credential-model"><dt>统计建模</dt><dd>时间序列 · 机器学习 · 深度学习 · 数理统计<br />ARIMA · LGBM · LSTM · TFT · SAC</dd></div>
+          <div className="credential-model"><dt>统计建模</dt><dd className="credential-lines"><span>时间序列 · 数理统计</span><span>机器学习 · 深度学习</span><span>ARIMA · LGBM</span><span>LSTM · TFT</span><span>SAC</span></dd></div>
         </dl>
       </section>
 

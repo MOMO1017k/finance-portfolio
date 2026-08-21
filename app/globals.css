@@ -37,7 +37,7 @@ img { display: block; max-width: 100%; }
 .hero-status .status i { background: #f8f6f2; }
 .hero-status p { color: #f8f6f2; font-size: 13px; letter-spacing: .08em; margin: 0; text-align: right; }
 .hero-status small { color: #d8dee4; font-size: 11px; margin-right: 14px; }
-.hero-main { max-width: 1100px; }
+.hero-main { max-width: none; }
 .hero-main > .overline { color: var(--orange); }
 .hero-main h1 { align-items: baseline; display: flex; flex-wrap: wrap; gap: 18px 34px; line-height: .92; margin: 38px 0 0; }
 .hero-main h1 .name-cn { font-size: clamp(40px, 5.4vw, 74px); font-weight: 680; letter-spacing: 2mm; }
@@ -45,7 +45,7 @@ img { display: block; max-width: 100%; }
 .hero-statement { font-size: clamp(26px, 3.2vw, 40px); font-weight: 600; letter-spacing: 2mm; line-height: 1.45; margin: 52px 0 0; max-width: none; white-space: nowrap; }
 .hero-summary { font-size: clamp(15px, 1.2vw, 17px); line-height: 2.1; margin: 38px 0 0; max-width: none; }
 .hero-summary span:first-child { white-space: nowrap; }
-.hero-cta { align-items: center; display: flex; flex-wrap: wrap; gap: 30px; margin-top: 42px; }
+.hero-cta { align-items: center; display: flex; flex-wrap: wrap; gap: 30px; justify-content: space-between; margin-top: 42px; }
 .primary-cta { align-items: center; background: var(--ink); color: white; display: inline-flex; font-size: 14px; font-weight: 700; gap: 70px; justify-content: space-between; min-width: 220px; padding: 18px 20px; transition: background .2s ease, transform .2s ease; }
 .primary-cta:hover { background: var(--orange); transform: translateY(-2px); }
 .text-cta { border-bottom: 1px solid var(--ink); font-size: 14px; font-weight: 700; padding: 8px 0; }
@@ -103,14 +103,16 @@ img { display: block; max-width: 100%; }
 .experience-list h3 { font-size: clamp(24px, 2.3vw, 36px); font-weight: 620; letter-spacing: -.035em; margin: 0; }
 .experience-list article > div > p { color: rgba(16,29,53,.63); font-size: 13px; line-height: 1.65; margin: 10px 0 0; max-width: 780px; }
 .experience-mark { justify-self: end; }
-.credential-board { border-bottom: 1px solid var(--line); border-top: 1px solid var(--line); display: grid; grid-template-columns: .9fr .9fr 1.25fr 1.05fr 1.45fr; margin: 0; }
-.hero-credentials { margin-top: auto; }
-.credential-board > div { border-right: 1px solid var(--line); display: flex; flex-direction: column; justify-content: center; min-height: 128px; padding: 20px 22px; }
+.credential-board { border-bottom: 1px solid var(--line); border-top: 1px solid var(--line); display: grid; grid-template-columns: 1.2fr .9fr 1.25fr 1.05fr 1.45fr; margin: 0; }
+.hero-credentials { margin-top: 32px; }
+.credential-board > div { border-right: 1px solid var(--line); display: flex; flex-direction: column; justify-content: center; min-height: 160px; padding: 20px 22px; }
 .credential-board > div:first-child { padding-left: 0; }
 .credential-board > div:last-child { border-right: 0; }
-.credential-board dt { font-size: clamp(24px, 2.4vw, 38px); font-weight: 720; letter-spacing: -.045em; line-height: 1.15; }
-.credential-board dd { color: rgba(52,68,87,.65); font-size: 12px; line-height: 1.65; margin: 9px 0 0; }
-.credential-model dd { font-size: 10px; }
+.credential-board dt, .credential-board .credential-primary { color: var(--ink); font-size: clamp(23px, 2.3vw, 37px); font-weight: 720; letter-spacing: -.045em; line-height: 1.15; }
+.credential-board .credential-primary { margin-top: 7px; white-space: nowrap; }
+.credential-board dd { color: rgba(52,68,87,.65); font-size: 13px; line-height: 1.65; margin: 9px 0 0; }
+.credential-lines span { display: block; white-space: nowrap; }
+.credential-model dd { font-size: 11px; line-height: 1.45; }
 
 footer { background: var(--orange); color: white; min-height: 100svh; scroll-margin-top: 82px; scroll-snap-align: start; }
 .footer-main { display: flex; flex-direction: column; min-height: 100svh; padding-bottom: 30px; padding-top: clamp(64px, 7vh, 96px); }
@@ -167,7 +169,8 @@ footer h2 span { color: var(--white); }
   .credential-board { grid-template-columns: 1fr; }
   .credential-board > div, .credential-board > div:nth-child(2n) { border-bottom: 1px solid var(--line); border-right: 0; min-height: 126px; padding-left: 0; }
   .credential-board > div:last-child { border-bottom: 0; grid-column: auto; }
-  .hero-credentials { margin-top: 48px; }
+  .hero-cta { justify-content: flex-start; }
+  .hero-credentials { margin-top: 32px; }
   .contact-row { grid-template-columns: 1fr; }
   .contact-row a { width: 100%; }
   .footer-bottom { flex-direction: column; gap: 14px; }
