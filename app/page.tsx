@@ -114,20 +114,22 @@ export default function Home() {
 
       <footer id="contact">
         <div className="shell footer-main">
-          <p className="overline">04 / CONTACT</p>
-          <h2>一起把复杂数据，<br /><span>变成清晰决策。</span></h2>
-          <p className="footer-note">正在寻找经营分析、FP&amp;A 与 AI Commercial Finance 机会。</p>
-          <div className="contact-row">
-            <a className="contact-card" href="mailto:15221824019@163.com">
-              <small>邮箱</small><span className="contact-value">15221824019@163.com</span><b aria-hidden="true">↗</b>
-            </a>
-            <a className="contact-card" href="tel:15221824019">
-              <small>电话/微信</small><span className="contact-value">15221824019</span><b aria-hidden="true">↗</b>
-            </a>
-          </div>
-          <div className="resume-row">
-            <a href="/resume.pdf" target="_blank">中文简历 <span>↗</span></a>
-            <a href="/resume-en.pdf" target="_blank">English Resume <span>↗</span></a>
+          <div className="footer-content">
+            <p className="overline">04 / CONTACT</p>
+            <h2>一起把复杂数据，<br /><span>变成清晰决策。</span></h2>
+            <p className="footer-note">正在寻找经营分析、FP&amp;A 与 AI Commercial Finance 机会。</p>
+            <div className="contact-row">
+              <a className="contact-card" href="mailto:15221824019@163.com">
+                <small>邮箱</small><span className="contact-value">15221824019@163.com</span><b aria-hidden="true">↗</b>
+              </a>
+              <a className="contact-card" href="tel:15221824019">
+                <small>电话/微信</small><span className="contact-value">15221824019</span><b aria-hidden="true">↗</b>
+              </a>
+            </div>
+            <div className="resume-row">
+              <a href="/resume.pdf" target="_blank">中文简历 <span>↗</span></a>
+              <a href="/resume-en.pdf" target="_blank">English Resume <span>↗</span></a>
+            </div>
           </div>
           <div className="footer-bottom"><span>李子默 · 上海长宁</span><span>FINANCE ANALYTICS PORTFOLIO · 2026</span><a href="#top">BACK TO TOP ↑</a></div>
         </div>

@@ -72,6 +72,7 @@ test("ships portfolio assets and site metadata", async () => {
   assert.match(page, /href="\/resume-en\.pdf"/);
   assert.match(page, /className="text-cta" href="#contact"/);
   assert.match(page, /href="tel:15221824019"/);
+  assert.match(page, /className="footer-content"/);
   assert.match(page, /className="resume-row"/);
   assert.doesNotMatch(page, /className="wordmark"|className="monogram"/);
   assert.doesNotMatch(page, /profile-metrics|className="marquee"/);
@@ -89,7 +90,8 @@ test("ships portfolio assets and site metadata", async () => {
   assert.match(css, /scroll-snap-type: y proximity/);
   assert.match(css, /min-height: 100svh/);
   assert.doesNotMatch(css, /\.profile-metrics|\.marquee/);
-  assert.match(css, /\.footer-main > \.overline \{ color: var\(--white\)/);
+  assert.match(css, /\.footer-content \{[^}]*justify-content: center/);
+  assert.match(css, /\.footer-content > \.overline \{ color: var\(--white\)/);
   assert.match(css, /\.contact-card \{[^}]*border-radius: 8px/);
   assert.match(css, /\.contact-card small \{ color: var\(--paper\)/);
   assert.match(css, /\.resume-row \{[^}]*max-width: 820px/);
