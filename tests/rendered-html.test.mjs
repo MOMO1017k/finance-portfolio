@@ -40,10 +40,11 @@ test("server-renders the portfolio framework", async () => {
   assert.match(html, /19 维监控指标体系/);
   assert.match(html, /约 1\.8 亿元历史负债/);
   assert.match(html, /LATEST/);
-  assert.match(html, /财务与分析经验/);
+  assert.match(html, /财务与分析/);
   assert.match(html, /同济大学/);
   assert.match(html, /CFA Level I 通过/);
   assert.match(html, /统计建模/);
+  assert.match(html, /LSTM · TFT · SAC/);
   assert.doesNotMatch(html, /CET-6/);
   assert.match(html, />能力</);
   assert.match(html, />项目</);
