@@ -45,7 +45,13 @@ export default function Home() {
             <a className="text-cta" href="#contact">和我聊聊 <span aria-hidden="true">↓</span></a>
           </div>
         </div>
-
+        <div className="credential-board hero-credentials">
+          <div className="credential-lead"><p className="overline">CORE SKILLS</p><h3>核心技能<br />与资格证书</h3></div>
+          <div><small>FINANCE</small><strong>财务经营</strong><span>经营指标分析 · 敏感性分析 · 滚动预测 · 情景测算 · 预算管理</span></div>
+          <div><small>CREDENTIALS</small><strong>CPA · ACCA</strong><span>CFA Level I 通过 · 税务师 · 中级会计师 · CET-6 · 中级口译</span></div>
+          <div><small>DATA SKILLS</small><strong>Power BI · Python</strong><span>Excel · SQL</span></div>
+          <div className="credential-model"><small>MODELING</small><strong>统计建模</strong><span>时间序列检测、机器学习、深度学习、数理统计；实践 ARIMA、LGBM、LSTM、TFT、SAC 等模型。</span></div>
+        </div>
       </section>
 
       <section className="work-section shell section-space" id="work">
@@ -103,13 +109,6 @@ export default function Home() {
               <div><h3>{item.role}</h3><p>{item.body}</p></div><span className="experience-mark">{item.mark}</span>
             </article>
           ))}
-        </div>
-        <div className="credential-board">
-          <div className="credential-lead"><p className="overline">PROFILE</p><h3>7 年<br />财务与分析经验</h3></div>
-          <div><small>EDUCATION</small><strong>同济大学</strong><span>应用统计硕士</span></div>
-          <div><small>CREDENTIALS</small><strong>CPA · ACCA</strong><span>税务师· 中级会计</span></div>
-          <div><small>CREDENTIALS</small><strong>CFA通过一级考试</strong></div>
-          <div><small>TOOLS</small><strong>Power BI · Python</strong><span>SQL · Excel · Data Modeling</span></div>
         </div>
       </section>
 
