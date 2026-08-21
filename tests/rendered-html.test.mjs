@@ -35,7 +35,9 @@ test("server-renders the portfolio framework", async () => {
   assert.match(html, /OPEN TO WORK/);
   assert.match(html, /经营&amp;财务分析、长期预测、预算管理/);
   assert.match(html, /经营分析 · FP&amp;A · AI Commercial Finance/);
-  assert.match(html, /18651708315/);
+  assert.match(html, /15221824019/);
+  assert.match(html, /电话\/微信/);
+  assert.match(html, /李子默 · 上海长宁/);
   assert.match(html, /125 万条文本和 104 万张图片/);
   assert.match(html, /19 维监控指标体系/);
   assert.match(html, /约 1\.8 亿元历史负债/);
@@ -69,7 +71,8 @@ test("ships portfolio assets and site metadata", async () => {
   assert.match(page, /href="\/resume\.pdf"/);
   assert.match(page, /href="\/resume-en\.pdf"/);
   assert.match(page, /className="text-cta" href="#contact"/);
-  assert.match(page, /href="tel:18651708315"/);
+  assert.match(page, /href="tel:15221824019"/);
+  assert.match(page, /className="resume-row"/);
   assert.doesNotMatch(page, /className="wordmark"|className="monogram"/);
   assert.doesNotMatch(page, /profile-metrics|className="marquee"/);
   assert.match(layout, /const title = "李子默｜Finance Analytics Portfolio"/);
