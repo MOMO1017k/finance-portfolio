@@ -90,6 +90,10 @@ test("ships portfolio assets and site metadata", async () => {
   assert.match(css, /min-height: 100svh/);
   assert.doesNotMatch(css, /\.profile-metrics|\.marquee/);
   assert.match(css, /\.footer-main > \.overline \{ color: var\(--white\)/);
+  assert.match(css, /\.contact-card \{[^}]*border-radius: 10px/);
+  assert.match(css, /\.contact-card small \{ color: var\(--paper\)/);
+  assert.match(css, /\.resume-row \{[^}]*max-width: 960px/);
+  assert.match(css, /\.footer-bottom \{[^}]*margin-top: clamp\(42px, 5vh, 60px\)/);
   assert.doesNotMatch(css, /#dfff00|#ff5b35/i);
 
   await Promise.all([
