@@ -89,6 +89,8 @@ test("ships portfolio assets and site metadata", async () => {
   assert.match(css, /\.hero-status \{[^}]*margin-bottom: clamp\(28px, 3vw, 44px\)/);
   assert.match(css, /scroll-snap-type: y proximity/);
   assert.match(css, /min-height: 100svh/);
+  assert.match(css, /\.capability-section \.section-space \{[^}]*min-height: calc\(100svh - 82px\)/);
+  assert.match(css, /\.capability-grid article \{[^}]*min-height: clamp\(300px, 39vh, 340px\)/);
   assert.doesNotMatch(css, /\.profile-metrics|\.marquee/);
   assert.match(css, /\.footer-content \{[^}]*justify-content: center/);
   assert.match(css, /\.footer-content > \.overline \{ color: var\(--white\)/);
