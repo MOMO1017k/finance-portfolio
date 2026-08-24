@@ -38,8 +38,10 @@ test("server-renders the portfolio framework", async () => {
   assert.match(html, /15221824019/);
   assert.match(html, /电话\/微信/);
   assert.match(html, /李子默 · 上海长宁/);
-  assert.match(html, /125 万条文本和 104 万张图片/);
-  assert.match(html, /19 维监控指标体系/);
+  assert.match(html, /125万条文本和104万张图片/);
+  assert.match(html, /游戏运营风险预警与归因系统/);
+  assert.match(html, /多模态社交媒体数据管线/);
+  assert.match(html, /游戏运营分析/);
   assert.match(html, /约 1\.8 亿元历史负债/);
   assert.match(html, /LATEST/);
   assert.match(html, /财务与分析/);
@@ -51,21 +53,23 @@ test("server-renders the portfolio framework", async () => {
   assert.match(html, />能力</);
   assert.match(html, />项目</);
   assert.match(html, />经历</);
-  assert.match(html, /下一阶段接入/);
+  assert.match(html, /PAGE/);
+  assert.doesNotMatch(html, /下一阶段接入/);
   assert.match(html, /15221824019@163\.com/);
   assert.doesNotMatch(html, /codex-preview|SkeletonPreview|react-loading-skeleton/);
 });
 
 test("ships portfolio assets and site metadata", async () => {
-  const [page, layout, packageJson, css] = await Promise.all([
+  const [page, projectSection, layout, packageJson, css] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/project-section.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
     readFile(new URL("../package.json", import.meta.url), "utf8"),
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
   ]);
 
   assert.match(page, /FINANCE ANALYTICS · SHANGHAI/);
-  assert.match(page, /01 \/ PROJECT/);
+  assert.match(projectSection, /01 \/ PROJECT/);
   assert.match(page, /02 \/ CAPABILITIES/);
   assert.match(page, /04 \/ CONTACT/);
   assert.match(page, /href="\/resume\.pdf"/);
@@ -74,6 +78,14 @@ test("ships portfolio assets and site metadata", async () => {
   assert.match(page, /href="tel:15221824019"/);
   assert.match(page, /className="footer-content"/);
   assert.match(page, /className="resume-row"/);
+  assert.match(projectSection, /全部/);
+  assert.match(projectSection, /FP&A/);
+  assert.match(projectSection, /游戏运营分析/);
+  assert.match(projectSection, /project-progress-track/);
+  assert.match(projectSection, /游戏运营风险预警与归因系统/);
+  assert.match(projectSection, /19项游戏运营风险指标体系/);
+  assert.match(projectSection, /自适应时序风险检测引擎/);
+  assert.match(projectSection, /玩家危机归因与运营策略分析/);
   assert.doesNotMatch(page, /className="wordmark"|className="monogram"/);
   assert.doesNotMatch(page, /profile-metrics|className="marquee"/);
   assert.match(layout, /const title = "李子默｜Finance Analytics Portfolio"/);

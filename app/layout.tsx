@@ -8,7 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const protocol = requestHeaders.get("x-forwarded-proto") ?? (host.includes("localhost") ? "http" : "https");
   const image = `${protocol}://${host}/og.png`;
   const title = "李子默｜Finance Analytics Portfolio";
-  const description = "李子默的 Finance Analytics 作品集：经营分析、FP&A、财务数据分析与可控自动化。";
+  const description = "李子默的 Finance Analytics 作品集：FP&A、经营分析、游戏运营分析、财务数据分析与可控自动化。";
 
   return {
     title,

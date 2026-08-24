@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import { ProjectSection } from "./project-section";
 
 export const metadata: Metadata = {
   title: "李子默｜Finance Analytics Portfolio",
-  description: "李子默的 Finance Analytics 作品集：经营分析、FP&A、财务数据分析与可控自动化。",
+  description: "李子默的 Finance Analytics 作品集：FP&A、经营分析、游戏运营分析、财务数据分析与可控自动化。",
 };
 
 const strengths = [
@@ -54,29 +55,7 @@ export default function Home() {
         </dl>
       </section>
 
-      <section className="work-section shell section-space" id="work">
-        <div className="section-intro">
-          <p className="overline">01 / PROJECT</p>
-          <div><h2>项目</h2><p>展示我如何拆解真实问题、建立分析方法，并将结果转化为可复核的业务结论。</p></div>
-        </div>
-        <article className="project-card">
-          <div className="project-visual">
-            <img src="/results-overview.png" alt="《无限暖暖》多模态舆情突变预警系统的结果概览" />
-            <div className="visual-label"><span>CASE 01</span><span>MASTER&apos;S PROJECT</span></div>
-            <div className="visual-signal" aria-hidden="true">
-              {[28, 36, 31, 51, 44, 72, 54, 86, 62, 46, 39, 57].map((height, index) => <i key={index} style={{ height: `${height}%` }} />)}
-            </div>
-          </div>
-          <div className="project-copy">
-            <div className="project-meta"><span>DATA &amp; ANALYTICS</span><span>2026</span></div>
-            <p className="project-index">01</p>
-            <h3>《无限暖暖》多模态舆情<br />突变预警系统</h3>
-            <p>处理约 125 万条文本和 104 万张图片，构建 19 维监控指标体系，结合时序分解、TFT、主题建模与图像聚类识别并解释异常变化。</p>
-            <div className="project-tags"><span>TIME SERIES</span><span>PYTHON</span><span>NLP</span><span>BUSINESS MONITORING</span></div>
-            <div className="coming-link" aria-label="项目详情将在下一阶段接入">查看项目详情 <span>下一阶段接入 →</span></div>
-          </div>
-        </article>
-      </section>
+      <ProjectSection />
 
       <section className="capability-section" id="capabilities">
         <div className="shell section-space">
