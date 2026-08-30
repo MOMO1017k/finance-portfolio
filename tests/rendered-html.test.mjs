@@ -41,6 +41,12 @@ test("server-renders the portfolio framework", async () => {
   assert.match(html, /125万/);
   assert.match(html, /104万/);
   assert.match(html, /游戏运营舆情风险预警与归因/);
+  assert.match(html, />全部</);
+  assert.match(html, />FP&amp;A</);
+  assert.match(html, />游戏运营分析</);
+  assert.match(html, /海外业务成本分摊与滚动预测/);
+  assert.match(html, /参数化长期预测模型/);
+  assert.match(html, /PAGE 01 \/ 02/);
   assert.match(html, /结果与证据摘要/);
   assert.match(html, /危机池外异常发现/);
   assert.match(html, /LATEST/);
@@ -93,6 +99,10 @@ test("ships portfolio assets and site metadata", async () => {
   assert.match(projectSection, /分层检测与自适应更新/);
   assert.match(projectSection, /文本与视觉归因/);
   assert.match(projectSection, /危机池外异常发现/);
+  assert.match(projectSection, /filterLabels = \{ all: "全部", fpa: "FP&A", game: "游戏运营分析" \}/);
+  assert.match(projectSection, /海外业务成本分摊与滚动预测/);
+  assert.match(projectSection, /Power BI 经营报告自动化/);
+  assert.match(projectSection, /project-progress-track/);
   assert.doesNotMatch(page, /className="wordmark"|className="monogram"/);
   assert.doesNotMatch(page, /profile-metrics|className="marquee"/);
   assert.match(layout, /const title = "李子默｜Finance Analytics Portfolio"/);
