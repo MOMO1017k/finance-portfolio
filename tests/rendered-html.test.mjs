@@ -131,6 +131,12 @@ test("ships portfolio assets and site metadata", async () => {
   assert.match(css, /footer \{[^}]*min-height: calc\(100svh - 82px\)/);
   assert.match(css, /\.footer-bottom \{[^}]*font-size: 13px[^}]*min-height: 82px/);
   assert.match(css, /\.footer-bottom \{[^}]*margin-top: auto/);
+  assert.match(css, /\.featured-case-tags span \{[^}]*font-size: 13px/);
+  assert.match(css, /\.featured-case-evidence-heading strong \{[^}]*font-size: 18px/);
+  assert.match(css, /\.featured-case-evidence-heading small \{[^}]*color: var\(--ink\)[^}]*font-size: 11px/);
+  assert.match(css, /\.featured-case-evidence-stack h4 \{[^}]*color: var\(--ink\)[^}]*font-size: 13px/);
+  assert.match(css, /\.featured-case-range \{[^}]*grid-template-columns: repeat\(2, max-content\)[^}]*justify-content: start/);
+  assert.match(css, /\.featured-case-known > strong \{[^}]*font-size: 23px/);
   assert.doesNotMatch(css, /#dfff00|#ff5b35/i);
 
   await Promise.all([

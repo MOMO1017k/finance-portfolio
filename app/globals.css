@@ -404,7 +404,7 @@ footer h2 span { color: var(--white); }
 .featured-case-metrics dd { color: rgba(251,250,248,.62); font-size: 10px; letter-spacing: .03em; line-height: 1.4; margin: 5px 0 0; white-space: nowrap; }
 .featured-case-footer { align-items: flex-end; display: flex; flex-wrap: wrap; gap: 18px; justify-content: space-between; margin-top: 22px; }
 .featured-case-tags { display: flex; flex-wrap: wrap; gap: 8px 14px; }
-.featured-case-tags span { color: var(--acid); font-size: 11px; font-weight: 700; letter-spacing: .02em; white-space: nowrap; }
+.featured-case-tags span { color: var(--acid); font-size: 13px; font-weight: 700; letter-spacing: .02em; white-space: nowrap; }
 .featured-case-tags span::before { color: #ffb2ae; content: "·"; margin-right: 6px; }
 .featured-case-actions { display: flex; flex-wrap: wrap; gap: 8px; }
 .featured-case-actions button, .featured-case-actions a, .case-detail-actions a, .case-detail-actions button { align-items: center; border: 1px solid rgba(251,250,248,.38); cursor: pointer; display: inline-flex; font: inherit; font-size: 12px; font-weight: 700; justify-content: center; letter-spacing: .02em; min-height: 42px; padding: 0 15px; text-decoration: none; white-space: nowrap; }
@@ -416,19 +416,19 @@ footer h2 span { color: var(--white); }
 .featured-case-evidence { background: var(--paper-deep); color: var(--ink); min-width: 0; padding: 24px 26px; }
 .featured-case-evidence-heading { align-items: flex-start; display: flex; gap: 14px; justify-content: space-between; }
 .featured-case-evidence-heading div { min-width: 0; }
-.featured-case-evidence-heading strong { display: block; font-size: 15px; font-weight: 700; line-height: 1.35; white-space: nowrap; }
-.featured-case-evidence-heading span { color: var(--ink-soft); display: block; font-size: 10px; line-height: 1.5; margin-top: 4px; white-space: nowrap; }
-.featured-case-evidence-heading small { color: var(--orange); font-size: 10px; font-weight: 700; letter-spacing: .08em; }
+.featured-case-evidence-heading strong { display: block; font-size: 18px; font-weight: 700; line-height: 1.35; white-space: nowrap; }
+.featured-case-evidence-heading span { color: var(--ink-soft); display: block; font-size: 11px; line-height: 1.5; margin-top: 4px; white-space: nowrap; }
+.featured-case-evidence-heading small { color: var(--ink); font-size: 11px; font-weight: 700; letter-spacing: .08em; }
 .featured-case-evidence-stack { border-bottom: 1px solid var(--line); margin-top: 13px; }
 .featured-case-evidence-stack section { border-top: 1px solid var(--line); padding: 12px 0 13px; }
-.featured-case-evidence-stack h4 { align-items: center; display: flex; font-size: 11px; font-weight: 700; gap: 8px; letter-spacing: .02em; margin: 0; white-space: nowrap; }
-.featured-case-evidence-stack h4 span { color: var(--orange); font-size: 9px; letter-spacing: .08em; }
-.featured-case-range { align-items: baseline; display: flex; gap: 24px; justify-content: space-between; margin-top: 8px; }
+.featured-case-evidence-stack h4 { align-items: center; color: var(--ink); display: flex; font-size: 13px; font-weight: 700; gap: 8px; letter-spacing: .02em; margin: 0; white-space: nowrap; }
+.featured-case-evidence-stack h4 span { color: var(--ink); font-size: 11px; letter-spacing: .08em; }
+.featured-case-range { align-items: baseline; display: grid; gap: 0 48px; grid-template-columns: repeat(2, max-content); justify-content: start; margin-top: 8px; }
 .featured-case-range p, .featured-case-outside p { margin: 0; min-width: 0; }
 .featured-case-range strong { display: block; font-size: 18px; line-height: 1.2; white-space: nowrap; }
 .featured-case-range span, .featured-case-outside span { color: var(--ink-soft); display: block; font-size: 10px; line-height: 1.4; margin-top: 3px; white-space: nowrap; }
 .featured-case-known { align-items: center; display: grid; gap: 13px; grid-template-columns: auto minmax(0, 1fr); margin-top: 8px; }
-.featured-case-known > strong { color: var(--orange); font-size: 27px; line-height: 1; white-space: nowrap; }
+.featured-case-known > strong { color: var(--orange); font-size: 23px; line-height: 1; white-space: nowrap; }
 .featured-case-known p { color: var(--ink); font-size: 11px; line-height: 1.5; margin: 0; }
 .featured-case-known p span { color: var(--ink-soft); display: block; font-size: 10px; margin-top: 3px; white-space: nowrap; }
 .featured-case-outside { display: grid; gap: 8px; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 8px; }
