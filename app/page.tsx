@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ExperienceTimeline } from "./experience-timeline";
 import { ProjectSection } from "./project-section";
 
 export const metadata: Metadata = {
@@ -12,18 +13,12 @@ const strengths = [
   { number: "03", title: "Finance Transformation", cn: "财务数字化转型", body: "结合财务判断、Power BI 与 Python，推进数据治理、预测监控和报表自动化，让分析流程更快、更可复核，并为可控 AI 工作流预留应用空间。", tags: ["Automation", "Data Governance", "AI Workflow"] },
 ];
 
-const experience = [
-  { period: "2024 — 2026", role: "海外业务 FP&A / 经营分析", body: "负责预算、滚动预测、成本分摊与经营监控，推动 Power BI 报告与成本透明化；从 0 到 1 搭建成本分析模型和参数化预测，部分国家及整体预测差异控制在 5% 以内。", mark: "LATEST" },
-  { period: "2021 — 2024", role: "财务分析 · 中国民生投资", body: "开展历史数据治理、分析自动化与管理报告体系化，支持复杂经营问题的澄清与决策；通过历史台账与账务数据梳理，推动约 1.8 亿元历史负债厘清及会计处理调整。", mark: "03 YRS" },
-  { period: "2019 — 2021", role: "财务数据与系统支持", body: "从财务基础工作进入数据与系统场景，建立对流程、口径和数据质量的完整理解；搭建资金、收入与对账标准化模板，并推进微信商城自助开票上线。", mark: "FOUNDATION" },
-];
-
 export default function Home() {
   return (
     <main id="top">
       <header className="site-header">
         <nav className="main-nav" aria-label="主导航">
-          <a href="#work">项目</a><a href="#capabilities">能力</a><a href="#experience">经历</a><a href="#contact">联系</a>
+          <a href="#experience">经历</a><a href="#capabilities">能力</a><a href="#work">项目</a><a href="#contact">联系</a>
         </nav>
         <div className="resume-menu" aria-label="简历下载">
           <a className="resume-link" href="/resume.pdf" target="_blank">中文简历 <span aria-hidden="true">↗</span></a>
@@ -42,7 +37,7 @@ export default function Home() {
           <p className="hero-statement">把财务问题，转化为可行动的数据答案。</p>
           <p className="hero-summary"><span>7 年财务与分析经验，横跨经营&amp;财务分析、长期预测、预算管理、数据治理与自动化。</span><br /><span>我关注的不只是“发生了什么”，更是为什么发生、接下来该做什么。</span></p>
           <div className="hero-cta">
-            <a className="primary-cta" href="#work">查看作品 <span aria-hidden="true">↓</span></a>
+            <a className="primary-cta" href="#experience">查看经历 <span aria-hidden="true">↓</span></a>
             <a className="text-cta" href="#contact">和我聊聊 <span aria-hidden="true">↓</span></a>
           </div>
         </div>
@@ -55,7 +50,13 @@ export default function Home() {
         </dl>
       </section>
 
-      <ProjectSection />
+      <section className="experience-section shell section-space" id="experience">
+        <div className="section-intro experience-section-intro">
+          <p className="overline">01 / EXPERIENCE</p>
+          <div><h2>经历</h2><p>从财务流程数字化起步，逐步走向数据治理、经营分析与业务决策支持。</p></div>
+        </div>
+        <ExperienceTimeline />
+      </section>
 
       <section className="capability-section" id="capabilities">
         <div className="shell section-space">
@@ -76,20 +77,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="experience-section shell section-space" id="experience">
-        <div className="section-intro">
-          <p className="overline">03 / EXPERIENCE</p>
-          <div><h2>经历</h2><p>选取与当前求职方向最相关的经历；完整信息可在中英文简历中查看。</p></div>
-        </div>
-        <div className="experience-list">
-          {experience.map((item, index) => (
-            <article key={item.period}>
-              <span className="experience-number">0{index + 1}</span><p className="experience-period">{item.period}</p>
-              <div><h3>{item.role}</h3><p>{item.body}</p></div><span className="experience-mark">{item.mark}</span>
-            </article>
-          ))}
-        </div>
-      </section>
+      <ProjectSection />
 
       <footer id="contact">
         <div className="shell footer-main">
