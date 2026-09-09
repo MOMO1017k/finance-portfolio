@@ -78,18 +78,18 @@ export function ExperienceTimeline() {
       <p className="career-narrative">我并不是从财务转向数据，而是在不同阶段持续用数据和技术解决更复杂的财务与经营问题。</p>
 
       <div className="career-map" aria-label="2019年至今的职业成长时间轴">
-        <svg className="career-axis" viewBox="0 0 1000 116" role="img" aria-labelledby="career-axis-title career-axis-desc">
+        <svg className="career-axis" viewBox="0 0 1000 70" role="img" aria-labelledby="career-axis-title career-axis-desc">
           <title id="career-axis-title">2019年至今的职业发展路径</title>
           <desc id="career-axis-desc">2019、2021、2024和现在四个时间点，由一条起伏的曲线连接。</desc>
-          <path className="career-curve" d="M 18 68 C 120 18 232 22 330 58 S 552 94 666 48 S 874 24 982 60" />
-          <circle className="career-dot" cx="18" cy="68" r="7" />
-          <circle className="career-dot" cx="330" cy="58" r="7" />
-          <circle className="career-dot" cx="666" cy="48" r="7" />
-          <circle className="career-dot career-dot-latest" cx="982" cy="60" r="7" />
-          <text className="career-year" x="18" y="102" textAnchor="start">2019</text>
-          <text className="career-year" x="330" y="92" textAnchor="middle">2021</text>
-          <text className="career-year" x="666" y="82" textAnchor="middle">2024</text>
-          <text className="career-year" x="982" y="94" textAnchor="end">NOW</text>
+          <path className="career-curve" d="M 18 41 C 120 11 232 13 330 35 S 552 56 666 29 S 874 14 982 36" />
+          <circle className="career-dot" cx="18" cy="41" r="7" />
+          <circle className="career-dot" cx="330" cy="35" r="7" />
+          <circle className="career-dot" cx="666" cy="29" r="7" />
+          <circle className="career-dot career-dot-latest" cx="982" cy="36" r="7" />
+          <text className="career-year" x="18" y="61" textAnchor="start">2019</text>
+          <text className="career-year" x="330" y="55" textAnchor="middle">2021</text>
+          <text className="career-year" x="666" y="49" textAnchor="middle">2024</text>
+          <text className="career-year" x="982" y="56" textAnchor="end">NOW</text>
         </svg>
 
         {stages.map((stage, index) => (

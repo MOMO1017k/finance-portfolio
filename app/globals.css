@@ -297,6 +297,28 @@ footer h2 span { color: var(--white); }
 .resume-row a span { position: absolute; right: 22px; }
 .footer-bottom { align-items: center; background: var(--paper); border-top: 1px solid rgba(52,68,87,.28); box-shadow: 0 0 0 100vmax var(--paper); clip-path: inset(0 -100vmax); color: var(--ink); display: flex; font-family: var(--font-geist-mono); font-size: 13px; justify-content: space-between; letter-spacing: .08em; margin-top: auto; min-height: 82px; padding: 0; }
 
+@media (min-width: 901px) {
+  .experience-section.section-space { display: flex; flex-direction: column; justify-content: center; padding-top: 16px; padding-bottom: 16px; }
+  .experience-section-intro h2 { margin-top: 10px; }
+  .experience-section-intro > div > p { margin-top: 8px; }
+  .career-timeline { margin-top: 10px; }
+  .career-map { grid-template-rows: minmax(104px, auto) 46px minmax(104px, auto); margin-top: 8px; }
+  .capability-section .section-space { display: flex; flex-direction: column; justify-content: center; }
+  .career-stage-1 { grid-column: 1 / 4; }
+  .career-stage-2 { grid-column: 3 / 6; }
+  .career-stage-3 { grid-column: 5 / 8; }
+  .career-stage-card { padding: 6px 12px; }
+  .career-stage-card strong { margin-top: 4px; }
+  .career-stage-role { margin-top: 3px; }
+  .career-stage-summary { margin-top: 4px; }
+  .career-stage-learning { margin-top: 4px; }
+  .career-axis { height: 82px; }
+  .career-stage-card::after { height: 10px; }
+  .career-stage-1::after, .career-stage-3::after { bottom: -11px; }
+  .career-stage-2::after { top: -11px; }
+  .career-detail { margin-top: 10px; padding: 8px 16px; }
+}
+
 @media (max-width: 1100px) {
   .project-tile { grid-template-columns: 1fr; min-height: 440px; }
   .project-art { min-height: 130px; }
