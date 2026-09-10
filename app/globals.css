@@ -21,6 +21,8 @@ img { display: block; max-width: 100%; }
 ::selection { background: var(--acid); color: var(--ink); }
 .shell { margin: 0 auto; max-width: 1220px; padding-left: 24px; padding-right: 24px; }
 .section-space { min-height: 100svh; padding-bottom: clamp(56px, 6vh, 84px); padding-top: clamp(64px, 7vh, 96px); scroll-margin-top: 82px; scroll-snap-align: start; }
+/* Section navigation focuses the panel; keep focus rings on its actual controls. */
+#top > section[tabindex="-1"]:focus, #top > footer[tabindex="-1"]:focus { outline: none; }
 .overline { font-family: var(--font-geist-mono); font-size: 13px; font-weight: 700; letter-spacing: .15em; margin: 0; text-transform: uppercase; }
 
 .site-header { align-items: center; backdrop-filter: blur(16px); background: rgba(244, 241, 237, .94); border-bottom: 1px solid var(--line); display: flex; height: 82px; justify-content: space-between; padding: 0 max(24px, calc((100vw - 1172px) / 2)); position: sticky; top: 0; z-index: 50; }
