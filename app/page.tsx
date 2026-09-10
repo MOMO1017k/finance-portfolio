@@ -55,7 +55,7 @@ export default function Home() {
       <section className="experience-section shell section-space" id="experience">
         <div className="section-intro experience-section-intro">
           <p className="overline">01 / EXPERIENCE</p>
-          <div><h2>经历</h2><p>从财务流程数字化起步，逐步走向数据治理、经营分析与业务决策支持。</p></div>
+          <div><h2>经历</h2><p>从财务流程数字化起步，让数据与技术进入经营分析与业务决策支持。</p></div>
         </div>
         <ExperienceTimeline />
       </section>

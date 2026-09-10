@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 
-type ExperienceStage = {
+type JourneyDetail = {
   id: string;
   index: string;
+  kind: "work" | "education";
   period: string;
   title: string;
   role: string;
@@ -15,104 +16,151 @@ type ExperienceStage = {
   mark: string;
 };
 
-const stages: ExperienceStage[] = [
+const journeyDetails: JourneyDetail[] = [
   {
-    id: "foundation",
-    index: "01 · PROCESS",
-    period: "2019 — 2021",
-    title: "财务流程数字化起点",
-    role: "财务专员 / 总账会计",
-    company: "上海君铧富励 / 南燕集团",
-    summary: "从资金、收入、应收和开票场景入手，将重复处理转化为标准模板、自动化工具和系统需求。",
-    learning: "能力积累｜财务流程理解、数据标准化与系统需求表达",
+    id: "bachelor",
+    index: "EDU · 01",
+    kind: "education",
+    period: "2015.09 — 2019.06",
+    title: "财务管理基础积累",
+    role: "会计学（国际方向）本科",
+    company: "上海对外经贸大学",
+    summary: "从会计专业出发，建立理解业务、财务数据与报表关系的基础。",
+    learning: "学习积累｜会计与财务基础、ACCA、英语能力",
     details: [
-      "整合资金、收入、应收及业务流水数据，搭建标准化分析与核对模板。",
-      "将重复性数据处理和核对流程工具化，提高月度数据准确性和管理信息输出效率。",
-      "参与业务、银行及开票系统需求梳理，推动财务数据流程标准化。",
-      "主导推进微信商城自助开票上线，连接业务、电商与财务流程。",
+      "GPA 3.61/4.0，连续 7 学期获得校级奖学金。",
+      "系统学习会计与财务管理课程，ACCA 全科通过。",
+      "2017 年“批改网杯”全国大学生英语写作大赛全国总决赛一等奖。",
     ],
     mark: "FOUNDATION",
   },
   {
+    id: "foundation",
+    index: "01 · PROCESS",
+    kind: "work",
+    period: "2019.01 — 2021.10",
+    title: "数据治理与财务信息化",
+    role: "财务专员 / 总账会计",
+    company: "FAFULI / 南燕集团",
+    summary: "从财务支持与日常作业入手，参与财务系统建设、数据标准化和业务流程优化。",
+    learning: "成长转折｜主动标准化作业流",
+    details: [
+      "FAFULI 财务专员（2019.01—2020.07）；南燕集团总账会计（2020.07—2021.10）。",
+      "负责账务处理、财务报表及管理报表，搭建资金、收入、对账等标准化模板，清理历史往来及应收数据。",
+      "参与财务相关系统需求上线，梳理业务与财务流程，整理需求并跟进开发、上线及优化。",
+    ],
+    mark: "PROCESS",
+  },
+  {
     id: "analysis",
     index: "02 · ANALYSIS",
-    period: "2021 — 2024",
-    title: "从数据治理到管理分析",
-    role: "财务分析与管理报告",
+    kind: "work",
+    period: "2021.10 — 2024.06",
+    title: "报表与财务分析",
+    role: "总账会计（集团财务分析）",
     company: "中国民生投资集团",
-    summary: "从集团多业务板块和复杂历史数据中识别异常、解释风险，推动管理报告自动化与线上化。",
-    learning: "学习主线｜同济大学应用统计硕士：时间序列、机器学习与统计建模",
+    summary: "从合并报表、投资项目和历史数据中追踪科目变化、重大事项与经营影响。",
+    learning: "成长转折｜业务理解、数据驱动的分析决策",
     details: [
-      "负责集团月度及年度财务分析，按业务板块追踪关键指标、同比环比变化及重大异常。",
-      "搭建多业务板块财务分析、费用分析及管理报告模板，引入 Excel 与 Python 优化分析流程。",
-      "整合历史财务数据与业务资料，推动约 1.8 亿元历史负债厘清，提升风险透明度。",
-      "协同信息部门及子公司推进管理报告线上化与数据标准化。",
+      "编制月度及年度财务分析材料，从合并报表层面拆解科目变化、重大事项及经营影响，支持管理层理解财务信息。",
+      "参与投资项目减值事项分析，收集核对子公司减值数据并提供汇报支持，跟踪资产减值变化原因。",
+      "梳理历史台账及账务资料，发现长期挂账及账实差异，推动约 1.8 亿元历史负债厘清及会计处理调整。",
     ],
-    mark: "03 YRS",
+    mark: "ANALYSIS",
   },
   {
     id: "decision",
     index: "03 · DECISION",
-    period: "2024 — 2026",
-    title: "连接业务驱动与经营决策",
-    role: "海外业务 FP&A / 经营分析",
-    company: "唯渡科技",
-    summary: "围绕预算、预测、成本效率和经营监控，把财务结果连接到资源配置与业务行动。",
-    learning: "学习转化｜将预测、异常识别与数据建模方法应用于真实经营问题",
+    kind: "work",
+    period: "2024.09 — 2026.08",
+    title: "BI建模与经营分析",
+    role: "高级财务分析师",
+    company: "唯渡科技（互联网金融）",
+    summary: "围绕海外业务经营场景，通过业务指标体系、预测模型和 BI 分析支持管理层经营判断。",
+    learning: "能力融合｜流程 × 数据 × 模型 → 经营决策支持",
     details: [
-      "负责海外业务预算、滚动预测与预实分析，围绕业务量、单位成本和资源投入拆解经营变化。",
-      "从 0 到 1 搭建 Power BI 成本分析体系，实现多国家、多维度经营表现追踪。",
-      "建立业务驱动型长期预测与情景测算模型，部分国家及整体预测偏差控制在 5% 以内。",
-      "将成本管理由月末复盘前移至月内动态监控，支持业务及时调整资源投入。",
+      "围绕业务规模、资源投入和效率指标开展日常与月度经营复盘、预算预测，拆解波动原因并支持策略判断。",
+      "基于业务流程、成本归集规则设计模型结构，从 0 到 1 搭建 Power BI 经营分析模型，实现各指标关联分析。",
+      "基于业务规模和成本驱动因素搭建参数化长期成本预测模型并开展情景测算，预测与实际差异控制在 5% 以内。",
+      "参与每日指标看板建设与优化，开展指标校验与异常跟踪，支持月内预测偏差修正及经营表现监控。",
     ],
     mark: "LATEST",
   },
+  {
+    id: "master",
+    index: "EDU · 02",
+    kind: "education",
+    period: "2024.09 — 2026.06",
+    title: "统计建模与技术融合",
+    role: "应用统计硕士（非全）",
+    company: "同济大学",
+    summary: "系统学习统计建模、机器学习与时间序列，并通过比赛和毕业设计将方法应用于真实分析问题。",
+    learning: "并行成长｜时间序列、机器学习、深度学习与量化分析",
+    details: [
+      "专业课均分 94.5；毕业论文获推荐参选优秀毕业论文。",
+      "系统学习统计建模、机器学习、深度学习、时间序列分析与量化分析，并通过实践提升模型应用能力。",
+      "2024 全国研究生工业与经济金融大数据建模大赛全国三等奖，负责 SARIMA、LSTM 时间序列预测及结果分析。",
+      "2025 全国大学生统计建模大赛上海市三等奖，负责 SAC 模型对冲环境搭建及运行结果评价。",
+    ],
+    mark: "EDUCATION",
+  },
 ];
+
+function getDetail(id: string) {
+  return journeyDetails.find((item) => item.id === id) ?? journeyDetails[3];
+}
 
 export function ExperienceTimeline() {
   const [selectedId, setSelectedId] = useState("decision");
-  const selectedStage = stages.find((stage) => stage.id === selectedId) ?? stages[2];
+  const selectedStage = getDetail(selectedId);
 
   return (
     <div className="career-timeline">
-      <p className="career-narrative">我并不是从财务转向数据，而是在不同阶段持续用数据和技术解决更复杂的财务与经营问题。</p>
+      <p className="career-narrative">工作经历是主线，学习与技术是持续汇入主线的能力支流。</p>
 
-      <div className="career-map" aria-label="2019年至今的职业成长时间轴">
-        <svg className="career-axis" viewBox="0 0 1000 70" role="img" aria-labelledby="career-axis-title career-axis-desc">
-          <title id="career-axis-title">2019年至今的职业发展路径</title>
-          <desc id="career-axis-desc">2019、2021、2024和现在四个时间点，由一条起伏的曲线连接。</desc>
-          <path className="career-curve" d="M 18 41 C 120 11 232 13 330 35 S 552 56 666 29 S 874 14 982 36" />
-          <circle className="career-dot" cx="18" cy="41" r="7" />
-          <circle className="career-dot" cx="330" cy="35" r="7" />
-          <circle className="career-dot" cx="666" cy="29" r="7" />
-          <circle className="career-dot career-dot-latest" cx="982" cy="36" r="7" />
-          <text className="career-year" x="18" y="61" textAnchor="start">2019</text>
-          <text className="career-year" x="330" y="55" textAnchor="middle">2021</text>
-          <text className="career-year" x="666" y="49" textAnchor="middle">2024</text>
-          <text className="career-year" x="982" y="56" textAnchor="end">NOW</text>
+      <div className="career-map" aria-label="2015年至2026年的职业与学习成长时间轴">
+        <svg className="career-axis" viewBox="0 0 1000 390" role="img" aria-labelledby="career-axis-title career-axis-desc">
+          <title id="career-axis-title">从财务管理基础到BI建模与经营分析的成长路径</title>
+          <desc id="career-axis-desc">三段工作经历沿连续曲线上升，两段教育经历作为起点和并行成长支线。</desc>
+          <path className="career-curve" d="M 50 282 C 145 282 160 265 220 265 S 405 228 520 168 S 695 112 800 82 S 900 46 952 38" />
+          <path className="career-study-curve" d="M 650 310 C 725 306 790 300 930 300" />
+          <rect className="career-start-mark" x="45" y="277" width="10" height="10" />
+          <path className="career-end-mark" d="M 952 30 L 960 38 L 952 46 L 944 38 Z" />
         </svg>
 
-        {stages.map((stage, index) => (
-          <button
-            className={`career-stage-card career-stage-${index + 1}`}
-            type="button"
-            key={stage.id}
-            aria-pressed={selectedId === stage.id}
-            aria-controls="career-detail"
-            onClick={() => setSelectedId(stage.id)}
-          >
-            <span className="career-stage-index">{stage.index}</span>
-            <strong>{stage.title}</strong>
-            <span className="career-stage-role">{stage.company} · {stage.period}</span>
-            <span className="career-stage-summary">{stage.summary}</span>
-            <span className="career-stage-learning">{stage.learning}</span>
-          </button>
-        ))}
+        <button className="career-education-point career-bachelor-point" type="button" aria-pressed={selectedId === "bachelor"} aria-controls="career-detail" onClick={() => setSelectedId("bachelor")}>
+          <span className="career-education-marker" aria-hidden="true" />
+          <span className="career-point-copy"><strong>财务管理基础积累</strong><span>2015.09—2019.06</span></span>
+        </button>
 
-        <span className="career-mobile-now">NOW · 财务 × 业务 × 数据 × 技术</span>
+        <div className="career-work-point career-work-one">
+          <button className="career-node" type="button" aria-label="查看数据治理与财务信息化经历" aria-pressed={selectedId === "foundation"} aria-controls="career-detail" onClick={() => setSelectedId("foundation")}>01</button>
+          <div className="career-point-copy"><span className="career-period">2019.01—2021.10</span><strong>数据治理与财务信息化</strong><span>FAFULI → 南燕集团</span></div>
+        </div>
+
+        <div className="career-bridge career-bridge-one"><strong>主动标准化作业流</strong></div>
+
+        <div className="career-work-point career-work-two">
+          <button className="career-node" type="button" aria-label="查看报表与财务分析经历" aria-pressed={selectedId === "analysis"} aria-controls="career-detail" onClick={() => setSelectedId("analysis")}>02</button>
+          <div className="career-point-copy"><span className="career-period">2021.10—2024.06</span><strong>报表与财务分析</strong><span>中国民生投资集团</span></div>
+        </div>
+
+        <div className="career-bridge career-bridge-two"><strong>业务理解、数据驱动的分析决策</strong></div>
+
+        <div className="career-work-point career-work-three">
+          <button className="career-node" type="button" aria-label="查看BI建模与经营分析经历" aria-pressed={selectedId === "decision"} aria-controls="career-detail" onClick={() => setSelectedId("decision")}>03</button>
+          <div className="career-point-copy"><span className="career-period">2024.09—2026.08</span><strong>BI建模与经营分析</strong><span>唯渡科技 · 高级财务分析师</span></div>
+        </div>
+
+        <button className="career-education-point career-master-point" type="button" aria-pressed={selectedId === "master"} aria-controls="career-detail" onClick={() => setSelectedId("master")}>
+          <span className="career-education-marker" aria-hidden="true" />
+          <span className="career-point-copy"><span className="career-period">并行成长线 · 2024.09—2026.06</span><strong>同济大学 · 应用统计硕士</strong><span>时间序列 · 机器学习 · 多模态异常检测</span></span>
+        </button>
+
+        <div className="career-outcome"><strong>经营决策支持</strong><span>流程 × 数据 × 模型</span></div>
       </div>
 
-      <article className="career-detail" id="career-detail" aria-live="polite">
+      <article className={`career-detail career-detail-${selectedStage.kind}`} id="career-detail" aria-live="polite">
         <div className="career-detail-heading">
           <span>{selectedStage.index}</span>
           <h3>{selectedStage.title}</h3>
@@ -120,9 +168,10 @@ export function ExperienceTimeline() {
           <p>{selectedStage.company} · {selectedStage.period}</p>
           <small>{selectedStage.learning}</small>
         </div>
-        <ul>
-          {selectedStage.details.map((detail) => <li key={detail}>{detail}</li>)}
-        </ul>
+        <div className="career-detail-copy">
+          <p>{selectedStage.summary}</p>
+          <ul>{selectedStage.details.map((detail) => <li key={detail}>{detail}</li>)}</ul>
+        </div>
         <span className="career-detail-mark">{selectedStage.mark}</span>
       </article>
     </div>
