@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ExperienceTimeline } from "./experience-timeline";
 import { ProjectSection } from "./project-section";
+import { SectionKeyboardNavigation } from "./section-keyboard-navigation";
 
 export const metadata: Metadata = {
   title: "李子默｜Finance Analytics Portfolio",
@@ -16,6 +17,7 @@ const strengths = [
 export default function Home() {
   return (
     <main id="top">
+      <SectionKeyboardNavigation />
       <header className="site-header">
         <nav className="main-nav" aria-label="主导航">
           <a href="#experience">经历</a><a href="#capabilities">能力</a><a href="#work">项目</a><a href="#contact">联系</a>
