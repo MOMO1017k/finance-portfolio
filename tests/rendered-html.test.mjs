@@ -2,33 +2,8 @@ import assert from "node:assert/strict";
 import { access, readFile } from "node:fs/promises";
 import test from "node:test";
 
-async function render() {
-  const workerUrl = new URL("../dist/server/index.js", import.meta.url);
-  workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
-  const { default: worker } = await import(workerUrl.href);
-
-  return worker.fetch(
-    new Request("http://localhost/", {
-      headers: { accept: "text/html" },
-    }),
-    {
-      ASSETS: {
-        fetch: async () => new Response("Not found", { status: 404 }),
-      },
-    },
-    {
-      waitUntil() {},
-      passThroughOnException() {},
-    },
-  );
-}
-
-test("server-renders the portfolio framework", async () => {
-  const response = await render();
-  assert.equal(response.status, 200);
-  assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
-
-  const html = await response.text();
+test("exports a CloudBase-ready static portfolio", async () => {
+  const html = await readFile(new URL("../dist/client/index.html", import.meta.url), "utf8");
   assert.match(html, /<title>李子默｜Finance Analytics Portfolio<\/title>/);
   assert.match(html, /把财务问题，转化为可行动的数据答案/);
   assert.match(html, /Aelita/);
@@ -38,6 +13,7 @@ test("server-renders the portfolio framework", async () => {
   assert.match(html, /15221824019/);
   assert.match(html, /电话\/微信/);
   assert.match(html, /李子默 · 上海长宁/);
+  assert.doesNotMatch(html, /localhost:3000/);
   assert.match(html, /125万/);
   assert.match(html, /104万/);
   assert.match(html, /游戏运营舆情风险预警与归因/);
@@ -148,6 +124,8 @@ test("ships portfolio assets and site metadata", async () => {
   assert.doesNotMatch(css, /#dfff00|#ff5b35/i);
 
   await Promise.all([
+    access(new URL("../dist/client/index.html", import.meta.url)),
+    access(new URL("../dist/client/_next", import.meta.url)),
     access(new URL("../public/resume.pdf", import.meta.url)),
     access(new URL("../public/resume-en.pdf", import.meta.url)),
     access(new URL("../public/feature-system.png", import.meta.url)),

@@ -1,0 +1,21 @@
+{
+  "hosting": [
+    {
+      "name": "finance-portfolio",
+      "root": ".",
+      "framework": "custom",
+      "buildCommand": "pnpm run build",
+      "outputDir": "dist/client",
+      "deployPath": "/",
+      "ignore": [
+        ".git",
+        ".next",
+        ".vinext",
+        ".wrangler",
+        "node_modules",
+        "outputs",
+        "work"
+      ]
+    }
+  ]
+}

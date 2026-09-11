@@ -1,100 +1,45 @@
-# vinext-starter
+# 李子默 Finance Analytics Portfolio
 
-A clean full-stack starter running on
-[vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and
-Drizzle support.
+个人财务与经营分析作品集，使用 React、Next.js API 与 vinext 构建。
+生产构建会静态导出到 `dist/client`，可直接部署到 CloudBase 静态网站托管。
 
-## Prerequisites
+## 运行环境
 
-- Node.js `>=22.13.0`
+- Node.js `22.x`（至少 `22.13.0`）
+- pnpm
 
-## Quick Start
+## 本地运行
 
 ```bash
-npm install
-npm run dev
-npm run build
+pnpm install --frozen-lockfile
+pnpm run dev
+pnpm run build
 ```
 
-This starter does not use `wrangler.jsonc`.
+构建完成后，入口文件为 `dist/client/index.html`。
 
-## Included Shape
+## CloudBase 部署
 
-- edit site code under `app/`
-- `.openai/hosting.json` declares optional Sites D1 and R2 bindings
-- `vite.config.ts` simulates declared bindings for local development
-- `db/schema.ts` starts intentionally empty
-- `examples/d1/` contains an optional D1 example surface
-- `drizzle.config.ts` supports local migration generation when needed
+推荐在 CloudBase 的「静态网站托管 → 应用部署」中连接 GitHub、Gitee 或 CNB 仓库：
 
-## Workspace Auth Headers
+- Node.js 版本：`22.x`
+- 项目框架：`其他`（使用自定义构建配置）
+- 安装命令：`pnpm install --frozen-lockfile`
+- 构建命令：`pnpm run build`
+- 输出目录：`dist/client`
+- 部署路径：`/`
 
-Signed-in visitors receive both `oai-authenticated-user-id` and `oai-authenticated-user-email`. Private Sites require every visitor to sign in; public Sites may also have anonymous visitors, for whom neither header is present.
+拿到 CloudBase 默认域名或绑定自定义域名后，可在构建环境变量中增加：
 
-The user ID is stable for the same user on the same Site and different across Sites. Email and name are intended for display or contact purposes.
-
-SIWC-authenticated workspace sites may also receive
-`oai-authenticated-user-full-name` when the user's SIWC profile has a non-empty
-`name` claim. The full-name value is percent-encoded UTF-8 and is accompanied by
-`oai-authenticated-user-full-name-encoding: percent-encoded-utf-8`.
-
-Treat the full name as optional and fall back to email when it is absent:
-
-```tsx
-import { headers } from "next/headers";
-
-export default async function Home() {
-  const requestHeaders = await headers();
-  const userId = requestHeaders.get("oai-authenticated-user-id");
-  const email = requestHeaders.get("oai-authenticated-user-email");
-  const encodedFullName = requestHeaders.get("oai-authenticated-user-full-name");
-  const fullName =
-    encodedFullName &&
-    requestHeaders.get("oai-authenticated-user-full-name-encoding") ===
-      "percent-encoded-utf-8"
-      ? decodeURIComponent(encodedFullName)
-      : null;
-
-  const displayName = fullName ?? email;
-  // ...
-}
+```text
+NEXT_PUBLIC_SITE_URL=https://你的域名
 ```
 
-## Optional Dispatch-Owned ChatGPT Sign-In
+这样微信、招聘平台等抓取页面时会使用正确的分享卡片地址。没有配置该变量时，
+网站仍可正常访问，只是不输出分享卡片图片地址。
 
-Import the ready-to-use helpers from `app/chatgpt-auth.ts` when the site needs
-optional or required ChatGPT sign-in:
+如果只需手动发布一次，也可以先运行 `pnpm run build`，然后上传整个
+`dist/client` 文件夹。不要只上传 `index.html`，页面还依赖同目录中的图片、
+简历和 `_next` 静态资源。
 
-- Use `getChatGPTUser()` for optional signed-in UI.
-- Use `requireChatGPTUser(returnTo)` for server-rendered pages that should send
-  anonymous visitors through Sign in with ChatGPT.
-- Use `chatGPTSignInPath(returnTo)` and `chatGPTSignOutPath(returnTo)` for
-  browser links or actions.
-- Pass a same-origin relative `returnTo` path for the destination after sign-in
-  or sign-out. The helper validates and safely encodes it.
-- Mark protected pages with `export const dynamic = "force-dynamic"` because
-  they depend on per-request identity headers.
-
-Dispatch owns `/signin-with-chatgpt`, `/signout-with-chatgpt`, `/callback`, the
-OAuth cookies, and identity header injection. Do not implement app routes for
-those reserved paths. Routes that do not import and call the helper remain
-anonymous-compatible.
-
-SIWC establishes identity only; it does not prove workspace membership. Use the
-Sites hosting platform's access policy controls for workspace-wide restrictions,
-or enforce explicit server-side membership or allowlist checks.
-
-Use SIWC for account pages, user-specific dashboards, saved records, and write
-actions tied to the current ChatGPT user. Leave public content anonymous.
-
-## Useful Commands
-
-- `npm run dev`: start local development
-- `npm run build`: verify the vinext build output
-- `npm test`: build the starter and verify its rendered loading skeleton
-- `npm run db:generate`: generate Drizzle migrations after schema changes
-
-## Learn More
-
-- [vinext Documentation](https://github.com/cloudflare/vinext)
-- [Drizzle D1 Guide](https://orm.drizzle.team/docs/get-started/d1-new)
+`cloudbaserc.json` 已包含同样的构建和输出目录配置，可用于 CloudBase CLI。
