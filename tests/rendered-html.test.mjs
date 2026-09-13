@@ -67,7 +67,12 @@ test("ships portfolio assets and site metadata", async () => {
   assert.match(experienceTimeline, /BI建模与经营分析/);
   assert.match(experienceTimeline, /上海对外经贸大学/);
   assert.match(experienceTimeline, /同济大学/);
-  assert.match(experienceTimeline, /约 1\.8 亿元历史负债/);
+  assert.match(experienceTimeline, /约1\.8亿元历史负债/);
+  assert.match(experienceTimeline, /company: "唯渡科技"/);
+  assert.match(experienceTimeline, /role: "高级财务分析师"/);
+  assert.match(experienceTimeline, /role: "会计学（国际方向）本科"/);
+  assert.match(experienceTimeline, /获奖情况/);
+  assert.match(experienceTimeline, /preserveAspectRatio="none"/);
   assert.match(experienceTimeline, /career-curve/);
   assert.match(experienceTimeline, /2019年至2027年/);
   assert.match(experienceTimeline, /type="range"/);

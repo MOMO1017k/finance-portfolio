@@ -243,7 +243,7 @@ img { display: block; max-width: 100%; }
 .experience-section-intro > div > p { color: var(--ink-soft); line-height: 1.5; margin-top: 6px; }
 .career-timeline { letter-spacing: .02em; margin-top: clamp(8px, 1.1vh, 12px); }
 .career-narrative { border-left: 4px solid var(--orange); color: var(--ink-soft); font-size: 14px; letter-spacing: .04em; line-height: 1.45; margin: 0; max-width: 940px; padding: 2px 0 2px 14px; }
-.career-map { margin-top: 14px; min-height: clamp(278px, 32vh, 302px); position: relative; }
+.career-map { isolation: isolate; margin-top: 14px; min-height: clamp(19rem, 34vh, 20.5rem); position: relative; }
 .career-axis { height: 100%; inset: 0; overflow: visible; pointer-events: none; position: absolute; width: 100%; }
 .career-curve, .career-tenure, .career-bachelor-connector, .career-card-connector { fill: none; vector-effect: non-scaling-stroke; }
 .career-curve { stroke: var(--ink); stroke-width: 2.4; }
@@ -267,7 +267,7 @@ img { display: block; max-width: 100%; }
 .career-stage-card:hover .career-card-hint, .career-stage-card:focus-visible .career-card-hint { opacity: 1; transform: translateY(0); }
 .career-bachelor-card { left: 0; top: 2%; }
 .career-bachelor-caption { background: var(--ink); border-radius: 999px; color: var(--white); font-size: 11px; font-weight: 700; left: 0; padding: 6px 10px; top: 58%; }
-.career-work-one { left: 14%; top: 61%; }
+.career-work-one { left: 7%; top: 71%; }
 .career-work-two { left: 30%; top: 6%; }
 .career-work-three { left: 60%; top: 5%; }
 .career-master-card { left: 60%; top: 61%; }
@@ -275,7 +275,7 @@ img { display: block; max-width: 100%; }
 .career-bridge::after { background: var(--orange); content: ""; left: 50%; position: absolute; width: 1px; }
 .career-bridge-one { left: 17%; top: 34%; }
 .career-bridge-one::after { height: 28px; top: 100%; }
-.career-bridge-two { left: 38%; top: 61%; }
+.career-bridge-two { left: 38%; top: 56%; }
 .career-bridge-two::after { bottom: 100%; height: 25px; }
 .career-bridge strong { display: block; font-size: 11px; line-height: 1.35; }
 .career-outcome { background: var(--ink); border-radius: 7px; color: var(--white); right: 0; text-align: right; top: 7%; width: max-content; }
@@ -358,6 +358,7 @@ footer h2 span { color: var(--white); }
   .career-axis { display: none; }
   .career-map::before { background: var(--ink); bottom: 28px; content: ""; left: 20px; opacity: .42; position: absolute; top: 28px; width: 2px; }
   .career-stage-card, .career-bachelor-caption, .career-bridge, .career-outcome { bottom: auto; left: auto; margin-left: 52px; position: relative; right: auto; top: auto; width: calc(100% - 52px); }
+  .career-stage-card { max-width: none; }
   .career-stage-card::before { background: var(--experience-paper); border: 2px solid var(--ink); border-radius: 50%; content: ""; height: 11px; left: -37px; position: absolute; top: 25px; width: 11px; }
   .career-stage-card[aria-pressed="true"]::before { background: var(--orange); border-color: var(--orange); }
   .career-card-hint { display: none; }
