@@ -458,6 +458,7 @@ footer h2 span { color: var(--white); }
 .featured-case-actions button, .featured-case-actions a, .case-detail-actions a, .case-detail-actions button { align-items: center; border: 1px solid rgba(251,250,248,.38); cursor: pointer; display: inline-flex; font: inherit; font-size: 12px; font-weight: 700; justify-content: center; letter-spacing: .02em; min-height: 38px; padding: 0 15px; text-decoration: none; white-space: nowrap; }
 .featured-case-actions button { background: var(--orange); border-color: var(--orange); color: var(--white); }
 .featured-case-actions a { background: transparent; color: var(--white); }
+.featured-case-actions a.primary-link { background: var(--orange); border-color: var(--orange); color: var(--white); }
 .featured-case-actions button:hover, .featured-case-actions a:hover { background: var(--white); border-color: var(--white); color: var(--ink); }
 .featured-case-actions button:focus-visible, .featured-case-actions a:focus-visible, .case-detail-back:focus-visible, .case-detail-actions a:focus-visible, .case-detail-actions button:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
 
@@ -482,6 +483,26 @@ footer h2 span { color: var(--white); }
 .featured-case-outside { display: grid; gap: 8px; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 6px; }
 .featured-case-outside strong { display: block; font-size: 16px; line-height: 1.2; white-space: nowrap; }
 .featured-case-proof { color: var(--ink-soft); font-size: 10px; line-height: 1.55; margin: 6px 0 0; }
+
+/* Business-analysis model demo */
+.business-case-card .featured-case-copy h3 { white-space: nowrap; }
+.business-case-capabilities dt { font-size: clamp(17px, 1.55vw, 20px); }
+.business-case-actions { margin-left: auto; }
+.business-case-evidence { background: var(--paper-deep); color: var(--ink); min-width: 0; padding: 18px 22px; }
+.business-case-evidence-heading { align-items: flex-start; display: flex; gap: 14px; justify-content: space-between; }
+.business-case-evidence-heading div { min-width: 0; }
+.business-case-evidence-heading strong { display: block; font-size: 18px; font-weight: 700; line-height: 1.35; white-space: nowrap; }
+.business-case-evidence-heading span { color: var(--ink-soft); display: block; font-size: 11px; line-height: 1.5; margin-top: 2px; white-space: nowrap; }
+.business-case-evidence-heading small { color: var(--ink); font-size: 11px; font-weight: 700; letter-spacing: .08em; }
+.business-case-dashboard { background: var(--white); border: 1px solid var(--line); margin-top: 10px; overflow: hidden; }
+.business-case-dashboard img { aspect-ratio: 1226 / 690; height: auto; object-fit: contain; width: 100%; }
+.business-case-lenses { border-bottom: 1px solid var(--line); border-top: 1px solid var(--line); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 10px; padding: 9px 0; }
+.business-case-lenses > div { border-left: 1px solid var(--line); min-width: 0; padding: 0 10px; }
+.business-case-lenses > div:first-child { border-left: 0; padding-left: 0; }
+.business-case-lenses strong { color: var(--orange); display: block; font-size: 14px; line-height: 1.25; white-space: nowrap; }
+.business-case-lenses span { color: var(--ink-soft); display: block; font-size: 9px; line-height: 1.4; margin-top: 4px; white-space: nowrap; }
+.business-case-route { color: var(--ink-soft); font-size: 9px; line-height: 1.5; margin: 8px 0 0; }
+.business-case-route strong { color: var(--orange); margin-right: 8px; }
 
 .case-detail-back { background: transparent; border: 1px solid var(--line); color: var(--ink); cursor: pointer; font: inherit; font-size: 12px; font-weight: 700; min-height: 42px; padding: 0 15px; }
 .case-detail-header { background: var(--ink); color: var(--white); margin-top: 16px; padding: clamp(28px, 4vw, 48px); }
@@ -519,6 +540,7 @@ footer h2 span { color: var(--white); }
   .featured-case-evidence { border-top: 1px solid rgba(52,68,87,.2); }
   .case-stage { grid-template-columns: 90px minmax(0, 1fr); }
   .case-stage ul { grid-column: 2; }
+  .business-case-card .featured-case-copy h3 { white-space: normal; }
 }
 
 @media (max-width: 640px) {

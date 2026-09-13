@@ -50,6 +50,63 @@ const technicalStages = [
   },
 ] as const;
 
+const businessAnalysisUrl = "https://app.powerbi.com/view?r=eyJrIjoiOGQyNDYzZmItNzgzZC00MDRlLTg2MjYtMDcyY2IwM2IyYzY3IiwidCI6IjRiZGI3OTM4LWZlZjctNGMwYy04ZDExLWVmNmY0ZTJjNDZkMCIsImMiOjEwfQ%3D%3D";
+
+function BusinessEvidenceSummary() {
+  return (
+    <aside className="business-case-evidence" aria-label="经营分析模型报表预览">
+      <div className="business-case-evidence-heading">
+        <div><strong>总览页 · 报表结构预览</strong><span>模拟数据 · 目标达成与经营拆解</span></div>
+        <small>EVIDENCE</small>
+      </div>
+
+      <div className="business-case-dashboard">
+        <img src="/business-analysis-overview.png" alt="使用模拟数据构建的 Power BI 经营总览页面" />
+      </div>
+
+      <div className="business-case-lenses" aria-label="经营分析视角">
+        <div><strong>看目标</strong><span>实际与目标对照</span></div>
+        <div><strong>看趋势</strong><span>收入与毛利联动</span></div>
+        <div><strong>看驱动</strong><span>定位利润变化</span></div>
+      </div>
+
+      <p className="business-case-route"><strong>分析链路</strong>总览 → 利润 → 营销 → 客户 → 产品 → 预测 → 资金 → AI</p>
+    </aside>
+  );
+}
+
+function BusinessCaseCard() {
+  return (
+    <article className="featured-case-card business-case-card">
+      <div className="featured-case-topline"><strong>01 / GLOBAL BUSINESS ANALYTICS</strong><span>RESULT → DRIVER → FORECAST → ACTION</span></div>
+
+      <div className="featured-case-layout">
+        <div className="featured-case-copy">
+          <p className="featured-case-kicker">经营分析模型 Demo</p>
+          <h3>全球化经营分析与决策驾驶舱</h3>
+          <p className="featured-case-summary">基于实际经营分析工作中使用的方法论，使用模拟数据重新构建，用于展示经营分析框架、Power BI 数据建模、DAX 指标设计及可视化能力。所有数据均为模拟数据，不涉及原公司经营信息。</p>
+
+          <dl className="featured-case-metrics business-case-capabilities">
+            <div><dt>可搭建</dt><dd>经营指标体系</dd></div>
+            <div><dt>可定位</dt><dd>目标与业绩差异</dd></div>
+            <div><dt>可拆解</dt><dd>增长与利润驱动</dd></div>
+            <div><dt>可支持</dt><dd>滚动预测与复盘</dd></div>
+          </dl>
+
+          <div className="featured-case-footer">
+            <div className="featured-case-tags"><span>指标体系设计</span><span>Power BI 看板</span><span>经营专题分析</span></div>
+            <div className="featured-case-actions business-case-actions">
+              <a className="primary-link" href={businessAnalysisUrl} target="_blank" rel="noreferrer">查看完整案例 →</a>
+            </div>
+          </div>
+        </div>
+
+        <BusinessEvidenceSummary />
+      </div>
+    </article>
+  );
+}
+
 function EvidenceSummary() {
   return (
     <aside className="featured-case-evidence" aria-label="项目结果与证据摘要">
@@ -187,6 +244,7 @@ export function ProjectSection() {
           </div>
 
           <div className="project-list" aria-live="polite">
+            {filter === "business" && <BusinessCaseCard />}
             {filter === "game" && <FlagshipCaseCard onOpen={() => setShowDetail(true)} />}
           </div>
         </>
