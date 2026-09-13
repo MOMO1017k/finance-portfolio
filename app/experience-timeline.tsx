@@ -35,7 +35,7 @@ const journeyDetails: JourneyDetail[] = [
     kind: "工作经历",
     period: "2019.01 — 2021.10",
     title: "基础财务与总账",
-    role: "财务专员 / 总账会计",
+    role: "总账会计 / 财务专员",
     company: "南燕集团 / FAFULI",
     summary: "从财务支持与日常作业入手，参与财务系统建设、数据标准化和业务流程优化。",
     details: [
