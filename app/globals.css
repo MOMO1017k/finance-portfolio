@@ -72,6 +72,7 @@ img { display: block; max-width: 100%; }
 .project-filter button[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--white); }
 .project-filter button:hover:not([aria-pressed="true"]) { border-color: var(--orange); color: var(--orange); }
 .project-filter button:focus-visible, .project-tile:focus-visible, .project-pager button:focus-visible, .project-back:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
+.project-list { display: grid; grid-template-columns: minmax(0, 1fr); }
 .project-window { margin-top: clamp(20px, 2.6vh, 30px); min-height: clamp(300px, 35vh, 350px); }
 .project-row { display: grid; gap: 18px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .project-tile { background: var(--white); border: 1px solid var(--line); color: var(--ink); cursor: pointer; display: grid; font: inherit; gap: 20px; grid-template-columns: minmax(0, 1.05fr) minmax(180px, .95fr); min-height: clamp(300px, 35vh, 350px); padding: 22px; text-align: left; transition: border-color .2s ease, transform .2s ease; width: 100%; }

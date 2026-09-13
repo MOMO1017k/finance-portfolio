@@ -1,42 +1,9 @@
 "use client";
 
-import { type MouseEvent, useState } from "react";
+import { useState } from "react";
 
-const filterLabels = { all: "全部", fpa: "FP&A", game: "游戏运营分析" } as const;
+const filterLabels = { business: "经营分析", game: "游戏运营分析" } as const;
 type ProjectFilter = keyof typeof filterLabels;
-
-const fpaProjects = [
-  {
-    id: "fpa-cost-forecast",
-    label: "FP&A",
-    title: "海外业务成本分摊与滚动预测",
-    summary: "预算、成本透明化与预测差异分析案例，正在整理可公开展示的业务口径与脱敏数据。",
-    tags: ["预算管理", "滚动预测", "差异分析"],
-  },
-  {
-    id: "fpa-long-range-plan",
-    label: "FP&A",
-    title: "参数化长期预测模型",
-    summary: "以经营参数连接收入、成本和情景假设，形成可复核的长期预测与敏感性分析。",
-    tags: ["长期规划", "情景测算", "参数模型"],
-  },
-  {
-    id: "fpa-data-governance",
-    label: "财务数据治理",
-    title: "历史负债清理与口径治理",
-    summary: "从历史台账与账务数据出发，重建核对逻辑、证据链和管理口径。",
-    tags: ["数据治理", "账务核对", "管理报告"],
-  },
-  {
-    id: "fpa-report-automation",
-    label: "分析自动化",
-    title: "Power BI 经营报告自动化",
-    summary: "将分散数据、固定口径和管理报告连接为可追踪、可复核的分析流程。",
-    tags: ["Power BI", "Python", "报告自动化"],
-  },
-] as const;
-
-const pageSize = 2;
 
 const headlineMetrics = [
   ["125万+", "文本记录"],
@@ -126,14 +93,6 @@ function EvidenceSummary() {
   );
 }
 
-function ProjectPlaceholder() {
-  return (
-    <div className="project-art project-art-placeholder" role="img" aria-label="FP&A案例内容整理中">
-      <span /><span /><span /><i>内容整理中</i>
-    </div>
-  );
-}
-
 function FlagshipCaseCard({ onOpen }: { onOpen: () => void }) {
   return (
     <article className="featured-case-card">
@@ -165,32 +124,12 @@ function FlagshipCaseCard({ onOpen }: { onOpen: () => void }) {
 }
 
 export function ProjectSection() {
-  const [filter, setFilter] = useState<ProjectFilter>("all");
-  const [page, setPage] = useState(0);
+  const [filter, setFilter] = useState<ProjectFilter>("game");
   const [showDetail, setShowDetail] = useState(false);
-  const pageCount = Math.ceil(fpaProjects.length / pageSize);
-  const visibleFpaProjects = fpaProjects.slice(page * pageSize, page * pageSize + pageSize);
-  const showGameProject = filter === "all" || filter === "game";
-  const showFpaProjects = filter === "all" || filter === "fpa";
 
   function selectFilter(nextFilter: ProjectFilter) {
     setFilter(nextFilter);
-    setPage(0);
     setShowDetail(false);
-  }
-
-  function changePage(direction: number) {
-    setPage((current) => (current + direction + pageCount) % pageCount);
-  }
-
-  function jumpFromTrack(event: MouseEvent<HTMLButtonElement>) {
-    if (event.detail === 0) {
-      changePage(1);
-      return;
-    }
-    const rect = event.currentTarget.getBoundingClientRect();
-    const ratio = (event.clientX - rect.left) / rect.width;
-    setPage(Math.min(pageCount - 1, Math.max(0, Math.floor(ratio * pageCount))));
   }
 
   return (
@@ -247,37 +186,9 @@ export function ProjectSection() {
             ))}
           </div>
 
-          {showGameProject && <FlagshipCaseCard onOpen={() => setShowDetail(true)} />}
-
-          {showFpaProjects && (
-            <>
-              <div className="project-window" aria-live="polite">
-                <div className="project-row">
-                  {visibleFpaProjects.map((project) => (
-                    <button className="project-tile is-pending" type="button" key={project.id} disabled>
-                      <span className="project-tile-copy">
-                        <span className="project-tile-label">{project.label}</span>
-                        <strong>{project.title}</strong>
-                        <span className="project-tile-summary">{project.summary}</span>
-                        <span className="project-tile-tags">{project.tags.map((tag) => <i key={tag}>{tag}</i>)}</span>
-                        <span className="project-tile-link">内容整理中</span>
-                      </span>
-                      <ProjectPlaceholder />
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div className="project-pager" aria-label="FP&A项目横向翻页">
-                <button type="button" aria-label="上一页项目" onClick={() => changePage(-1)}>←</button>
-                <button className="project-progress-track" type="button" aria-label={`FP&A项目页进度，第${page + 1}页，共${pageCount}页`} onClick={jumpFromTrack}>
-                  <span style={{ width: `${((page + 1) / pageCount) * 100}%` }} />
-                </button>
-                <button type="button" aria-label="下一页项目" onClick={() => changePage(1)}>→</button>
-                <span>{`PAGE ${String(page + 1).padStart(2, "0")} / ${String(pageCount).padStart(2, "0")}`}</span>
-              </div>
-            </>
-          )}
+          <div className="project-list" aria-live="polite">
+            {filter === "game" && <FlagshipCaseCard onOpen={() => setShowDetail(true)} />}
+          </div>
         </>
       )}
     </section>
