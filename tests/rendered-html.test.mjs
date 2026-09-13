@@ -102,6 +102,9 @@ test("ships portfolio assets and site metadata", async () => {
   assert.match(css, /\.hero-status \{[^}]*margin-bottom: clamp\(28px, 3vw, 44px\)/);
   assert.match(css, /scroll-snap-type: y proximity/);
   assert.match(css, /min-height: 100svh/);
+  assert.match(css, /\.work-section\.section-space \{[^}]*min-height: calc\(100svh - 82px\)[^}]*padding-bottom: clamp\(28px, 3\.4vh, 42px\)[^}]*padding-top: clamp\(28px, 3\.4vh, 42px\)/);
+  assert.match(css, /\.project-section-intro h2 \{ margin-top: clamp\(16px, 2vh, 24px\)/);
+  assert.match(css, /\.featured-case-card, \.case-detail \{[^}]*margin-top: clamp\(14px, 2vh, 20px\)/);
   assert.match(css, /\.capability-section \.section-space \{[^}]*min-height: calc\(100svh - 82px\)/);
   assert.match(css, /\.capability-grid article \{[^}]*min-height: clamp\(270px, 35vh, 310px\)/);
   assert.doesNotMatch(css, /\.profile-metrics|\.marquee/);
