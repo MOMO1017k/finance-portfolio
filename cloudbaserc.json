@@ -1,4 +1,6 @@
 {
+  "$schema": "https://static.cloudbase.net/cli/cloudbaserc.schema.json",
+  "envId": "portfolio-d2g79lhgp3618d992",
   "hosting": [
     {
       "name": "finance-portfolio",
