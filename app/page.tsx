@@ -9,9 +9,27 @@ export const metadata: Metadata = {
 };
 
 const strengths = [
-  { number: "01", title: "Planning & Performance", cn: "规划与经营分析", body: "预算、滚动预测、差异分析和管理报告，把数字变化连接到清晰的经营动作。", tags: ["Budget", "Forecast", "Variance"] },
-  { number: "02", title: "Data & Decision", cn: "数据与决策支持", body: "从口径治理到可视化看板，把分散数据整理为可追踪、可复核的业务信号。", tags: ["Power BI", "SQL", "Python"] },
-  { number: "03", title: "Finance Transformation", cn: "财务数字化转型", body: "结合财务判断、Power BI 与 Python，推进数据治理、预测监控和报表自动化，让分析流程更快、更可复核，并为可控 AI 工作流预留应用空间。", tags: ["Automation", "Data Governance", "AI Workflow"] },
+  {
+    number: "01",
+    title: "Business Performance & FP&A",
+    cn: "经营分析与 FP&A",
+    body: "围绕业务规模、资源投入与效率指标开展经营分析，结合预算、滚动预测、差异分析与情景测算，拆解经营波动并支持资源配置与管理决策。",
+    tags: ["Budget", "Forecast", "Variance", "Scenario", "Resource Allocation"],
+  },
+  {
+    number: "02",
+    title: "BI & Data Modeling",
+    cn: "BI 与数据模型",
+    body: "从业务流程和分析需求出发，设计指标体系、事实表与维度表，搭建 Power BI 语义模型与 DAX 指标，将分散数据转化为可持续使用的经营分析体系。",
+    tags: ["Power BI", "SQL", "DAX", "Data Model", "KPI System"],
+  },
+  {
+    number: "03",
+    title: "Predictive & Advanced Analytics",
+    cn: "预测建模与高级分析",
+    body: "运用时间序列、机器学习及多模态分析方法处理预测与异常识别问题，将复杂模型转化为可解释的业务信号，为趋势判断、风险识别与深入归因提供数据依据。",
+    tags: ["Time Series", "ML", "TFT", "LSTM", "Multimodal"],
+  },
 ];
 
 export default function Home() {
@@ -64,7 +82,7 @@ export default function Home() {
         <div className="shell section-space">
           <div className="section-intro inverse">
             <p className="overline">02 / CAPABILITIES</p>
-            <div><h2>能力</h2><p>结合财务判断、数据分析与自动化，让规划更快、报告更清楚、决策更容易执行。</p></div>
+            <div><h2>核心能力</h2><p>连接业务、财务与数据，从经营问题拆解到分析模型落地，为预测、资源配置与经营决策提供支持。</p></div>
           </div>
           <div className="capability-grid">
             {strengths.map((item) => (
@@ -75,6 +93,13 @@ export default function Home() {
                 <div className="capability-tags">{item.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
               </article>
             ))}
+          </div>
+          <div className="capability-foundation" aria-label="基础能力与资质">
+            <div className="capability-foundation-title">
+              <strong>FINANCE FOUNDATION</strong>
+              <span>基础能力 / CREDENTIALS</span>
+            </div>
+            <p>财务报告 <i>·</i> 合并报表 <i>·</i> 数据治理 <i>·</i> CPA <i>·</i> ACCA <i>·</i> CFA Level I</p>
           </div>
         </div>
       </section>

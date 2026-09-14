@@ -58,6 +58,11 @@ test("ships portfolio assets and site metadata", async () => {
   assert.match(page, /href="#experience">经历<\/a><a href="#capabilities">能力<\/a><a href="#work">项目<\/a><a href="#contact">联系/);
   assert.match(page, /<ExperienceTimeline \/>[\s\S]*id="capabilities"[\s\S]*<ProjectSection \/>/);
   assert.match(page, /从财务流程数字化起步，让数据与技术进入经营分析与业务决策支持。/);
+  assert.match(page, /Business Performance & FP&A/);
+  assert.match(page, /BI & Data Modeling/);
+  assert.match(page, /Predictive & Advanced Analytics/);
+  assert.match(page, /FINANCE FOUNDATION/);
+  assert.match(page, /财务报告/);
   assert.match(experienceTimeline, /工作经历是主线，学习与技术是持续汇入主线的能力支流。/);
   assert.match(experienceTimeline, /财务管理基础积累/);
   assert.match(experienceTimeline, /基础财务与总账/);
@@ -114,7 +119,8 @@ test("ships portfolio assets and site metadata", async () => {
   assert.match(css, /\.project-section-intro h2 \{ margin-top: clamp\(16px, 2vh, 24px\)/);
   assert.match(css, /\.featured-case-card, \.case-detail \{[^}]*margin-top: clamp\(14px, 2vh, 20px\)/);
   assert.match(css, /\.capability-section \.section-space \{[^}]*min-height: calc\(100svh - 82px\)/);
-  assert.match(css, /\.capability-grid article \{[^}]*min-height: clamp\(270px, 35vh, 310px\)/);
+  assert.match(css, /\.capability-grid article \{[^}]*background: rgba\(251,252,253,\.82\)[^}]*min-height: clamp\(300px, 38vh, 342px\)/);
+  assert.match(css, /\.capability-foundation \{[^}]*background: rgba\(251,252,253,\.82\)/);
   assert.doesNotMatch(css, /\.profile-metrics|\.marquee/);
   assert.match(css, /\.footer-content \{[^}]*justify-content: center/);
   assert.match(css, /\.footer-content > \.overline \{ color: var\(--white\)/);
