@@ -181,7 +181,7 @@ function FlagshipCaseCard({ onOpen }: { onOpen: () => void }) {
 }
 
 export function ProjectSection() {
-  const [filter, setFilter] = useState<ProjectFilter>("game");
+  const [filter, setFilter] = useState<ProjectFilter>("business");
   const [showDetail, setShowDetail] = useState(false);
 
   function selectFilter(nextFilter: ProjectFilter) {
